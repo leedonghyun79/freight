@@ -42,150 +42,126 @@ const cases = [
   {
     id: 4,
     title: "전국 공공기관 서버센터 통합 이전",
+    description: "전국 주요 공공기관의 노후 서버 및 신규 서버센터 통합 이전 프로젝트. 보안 1등급 기술 인력 및 특수 에어 서스펜션 차량 대거 투입.",
     category: "Data Center",
     image: "/images/20260316_095955.jpg",
     specs: ["Multiple Trucks", "Safety Check"],
+  },
+  {
+    id: 5,
+    title: "한화우주센터 레이더 운송",
+    description: "항공우주 정밀 레이더 장비의 국가 전략 물자 특수 운송. 거대 중량물의 흔들림 없는 완벽 결박 및 실시간 보안 관제 시스템 가동.",
+    category: "Aero & Defense",
+    image: "/images/KakaoTalk_20240925_171228899_07.jpg",
+    specs: ["Strategic Cargo", "Security Control"],
+  },
+  {
+    id: 6,
+    title: "다수 정밀 장비 일괄 결박 운송",
+    description: "연구 시설 내 다수의 분석 장비를 한 번에 안전하게 이동. 이중 밴드 결박 시스템과 전용 스펀지 완충제로 미세 흠집까지 방지.",
+    category: "Bulk Transport",
+    image: "/images/KakaoTalk_20241118_172833856_07.jpg",
+    specs: ["Double Strapping", "Shock Absorption"],
+  },
+  {
+    id: 7,
+    title: "대형 기기 전면 완충 포장",
+    description: "반도체 클린룸 내부 정밀 장비의 외부 반출 전 특수 포장. 정전기 방지 비닐과 전면 우레탄 완충제를 이용한 완벽한 외부 충격 차단.",
+    category: "Safety Packing",
+    image: "/images/KakaoTalk_20240925_171228899_09.jpg",
+    specs: ["Anti-Static", "Padding"],
+  },
+  {
+    id: 8,
+    title: "무진동 적재함 내부 모니터링",
+    description: "운송 중 적재함 내부의 실시간 상태 확인. 항온항습 모니터링 및 CCTV를 통해 도착지까지 화물의 안전 상태를 실시간으로 모니터링.",
+    category: "Monitoring",
+    image: "/images/KakaoTalk_20240920_150105466_02.jpg",
+    specs: ["Real-time CCTV", "Climate Log"],
   },
 ];
 
 export default function PortfolioCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [mainSwiper, setMainSwiper] = useState<SwiperType | null>(null);
 
   return (
-    <section id="portfolio" className="py-24 bg-surface overflow-hidden">
+    <section id="portfolio" className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        {/* Standardized Section Header with Navigation */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-16">
           <div>
-            <span className="text-primary-orange font-bold text-sm tracking-widest uppercase mb-4 block">
-              PORTFOLIO
+            <span className="text-gray-400 font-bold text-sm tracking-widest uppercase mb-4 block">
+              ACTUAL CASES
             </span>
-            <h2 className="text-4xl md:text-5xl font-outfit font-black text-primary-navy tracking-tight">
+            <h2 className="text-[36px] font-black text-primary-navy tracking-tight">
               실제 <span className="text-primary-orange">운송 사례</span>
             </h2>
           </div>
-          <div className="hidden md:flex items-center space-x-4">
+          
+          {/* Header Navigation Buttons */}
+          <div className="flex items-center space-x-3 mt-8 md:mt-0">
             <button
-              id="portfolio-prev"
-              className="w-12 h-12 rounded-full border border-primary-navy/20 flex items-center justify-center hover:bg-primary-navy hover:text-white transition-all group"
+              id="work-prev"
+              className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-primary-navy hover:text-white hover:border-primary-navy transition-all duration-300 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
             >
-              <ChevronLeft size={24} className="group-hover:-translate-x-1 transition-transform" />
+              <ChevronLeft size={20} />
             </button>
             <button
-              id="portfolio-next"
-              className="w-12 h-12 rounded-full border border-primary-navy/20 flex items-center justify-center hover:bg-primary-navy hover:text-white transition-all group"
+              id="work-next"
+              className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-primary-navy hover:text-white hover:border-primary-navy transition-all duration-300 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
             >
-              <ChevronRight size={24} className="group-hover:translate-x-1 transition-transform" />
+              <ChevronRight size={20} />
             </button>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch min-h-[500px]">
-          {/* Main Display Area (Left Focus) */}
-          <div className="lg:col-span-8 relative rounded-3xl overflow-hidden shadow-2xl group">
-            <Swiper
-              modules={[Navigation, Autoplay, EffectFade, Controller]}
-              effect="fade"
-              onSwiper={setMainSwiper}
-              onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-              navigation={{
-                prevEl: "#portfolio-prev",
-                nextEl: "#portfolio-next",
-              }}
-              autoplay={{
-                delay: 5000,
-                disableOnInteraction: false,
-              }}
-              className="w-full h-full"
-            >
-              {cases.map((item) => (
-                <SwiperSlide key={item.id} className="relative h-full min-h-[500px]">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  {/* Content Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary-navy via-transparent to-transparent flex flex-col justify-end p-10 md:p-16">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6 }}
-                    >
-                      <span className="bg-primary-orange text-white text-[10px] font-bold px-3 py-1 rounded-full mb-4 inline-block tracking-[0.2em] uppercase">
-                        {item.category}
-                      </span>
-                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                        {item.title}
-                      </h3>
-                      <p className="text-gray-300 max-w-lg mb-8 text-sm md:text-base leading-relaxed hidden sm:block">
-                        {item.description}
-                      </p>
-                      <button className="inline-flex items-center text-white font-bold text-sm tracking-wider border-b-2 border-primary-orange pb-2 hover:border-white transition-all group">
-                        DETAIL VIEW
-                        <ArrowRight size={16} className="ml-2 group-hover:translate-x-2 transition-transform" />
-                      </button>
-                    </motion.div>
+        {/* Carousel Container */}
+        <div className="relative">
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            spaceBetween={24}
+            slidesPerView="auto" // Changed to auto to support fixed width slides
+            loop={true}
+            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+            navigation={{
+              prevEl: "#work-prev",
+              nextEl: "#work-next",
+            }}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
+            className="w-full pb-10"
+          >
+            {cases.map((item) => (
+              <SwiperSlide key={item.id} className="!w-[320px]">
+                <div className="bg-white rounded-lg overflow-hidden border border-gray-100 transition-all hover:shadow-xl group/card h-full flex flex-col">
+                  {/* Image Container */}
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover/card:scale-110"
+                    />
                   </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-            
-            {/* Custom Pagination Counter (LX Style) */}
-            <div className="absolute bottom-10 right-10 z-10 hidden sm:flex items-center space-x-6">
-               <div className="h-0.5 w-12 bg-white/20 relative overflow-hidden">
-                  <motion.div
-                    key={activeIndex}
-                    className="absolute inset-y-0 left-0 bg-primary-orange"
-                    initial={{ width: "0%" }}
-                    animate={{ width: "100%" }}
-                    transition={{ duration: 5, ease: "linear" }}
-                  />
-               </div>
-               <div className="text-white font-outfit font-bold tracking-widest flex items-center space-x-2">
-                  <span className="text-lg">0{activeIndex + 1}</span>
-                  <span className="text-white/40">/</span>
-                  <span className="text-white/40 text-xs">0{cases.length}</span>
-               </div>
-            </div>
-          </div>
-
-          {/* Sub Thumbnails List (Right Side) */}
-          <div className="lg:col-span-4 flex flex-col space-y-4">
-            {cases.map((item, idx) => (
-              <button
-                key={item.id}
-                onClick={() => mainSwiper?.slideTo(idx)}
-                className={`flex items-center p-4 rounded-2xl transition-all text-left group ${
-                  activeIndex === idx
-                    ? "bg-primary-navy text-white shadow-lg"
-                    : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-100"
-                }`}
-              >
-                <div className="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className={`absolute inset-0 transition-opacity ${activeIndex === idx ? "bg-primary-navy/40" : "bg-transparent"}`}></div>
-                </div>
-                <div className="ml-4 truncate">
-                  <div className={`text-[10px] font-bold tracking-wider mb-1 uppercase ${activeIndex === idx ? "text-primary-orange" : "text-gray-400"}`}>
-                    Project 0{idx + 1}
+                  {/* Content Area */}
+                  <div className="p-5 flex-grow border-t border-gray-50">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 truncate">
+                      {item.title}
+                    </h3>
+                    <div className="text-sm text-gray-400 font-medium">
+                      #{item.category.replace(/\s+/g, "")}
+                    </div>
+                    {/* Added description subtly for context */}
+                    <p className="mt-3 text-xs text-gray-400 line-clamp-2 leading-relaxed opacity-0 group-hover/card:opacity-100 transition-opacity">
+                      {item.description}
+                    </p>
                   </div>
-                  <div className="font-bold text-sm truncate">{item.title}</div>
                 </div>
-                {activeIndex === idx && (
-                   <motion.div layoutId="active-indicator" className="ml-auto">
-                      <ArrowRight size={18} className="text-primary-orange" />
-                   </motion.div>
-                )}
-              </button>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
       </div>
     </section>

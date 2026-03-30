@@ -17,24 +17,21 @@ export default function AboutSection() {
         <div className="flex flex-col lg:flex-row gap-20 items-center">
           {/* Detailed Content */}
           <div className="lg:w-1/2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-primary-orange font-bold text-sm tracking-widest uppercase mb-6"
-            >
-              COMPANY OVERVIEW
-            </motion.div>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl font-outfit font-black text-primary-navy mb-8 leading-tight"
-            >
-              고정밀 장비 운송의 <br />
-              <span className="text-primary-orange">최전선에서 안전을 증명</span>합니다.
-            </motion.h2>
+            <div className="mb-8">
+              <span className="text-primary-orange font-bold text-sm tracking-widest uppercase mb-4 block">
+                COMPANY OVERVIEW
+              </span>
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-4xl md:text-6xl font-outfit font-black text-primary-navy leading-tight tracking-tight"
+              >
+                고정밀 장비 운송의 <br />
+                <span className="text-primary-orange">최전선</span>에 있습니다.
+              </motion.h2>
+            </div>
             
             <p className="text-gray-500 mb-10 leading-relaxed text-lg font-light">
               프로펙스 특수운송은 외부 충격과 미세한 온습도 변화에도 민감한 <strong>반도체 설비, 의료 장비, 기술 자산</strong>을 가장 안전하고 전문적으로 운반하기 위해 탄생했습니다. 

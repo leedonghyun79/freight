@@ -64,3 +64,8 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Global cursor pointer for interactive elements */
+a, button, [role="button"], .swiper-button-prev, .swiper-button-next {
+  cursor: pointer !important;
+}

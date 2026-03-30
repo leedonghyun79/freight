@@ -37,18 +37,18 @@ export default function MiddleSection() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="text-center mb-24">
+        <div className="text-center mb-16 max-w-4xl mx-auto">
+          <span className="text-gray-300 font-bold text-sm tracking-widest uppercase mb-4 block">
+            COMPANY INFO
+          </span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-outfit font-black text-white mb-6 tracking-tight"
+            className="text-[36px] font-outfit font-black text-white mb-8 tracking-tight"
           >
-            COMPANY <span className="font-light">INFO</span>
+            프로텍스 <span className="text-primary-orange">전문 인프라</span>
           </motion.h2>
-          <p className="text-gray-400 text-sm tracking-widest uppercase mt-4">
-            전문 기술과 신뢰를 가진 프로텍스와 함께 하세요
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -65,7 +65,7 @@ export default function MiddleSection() {
                 <h3 className="text-xl font-bold text-white mb-6 group-hover:text-primary-orange transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <p className="text-gray-400 text-base leading-relaxed break-keep">
                   {item.description}
                 </p>
               </div>

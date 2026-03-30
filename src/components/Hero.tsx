@@ -19,7 +19,7 @@ export default function Hero() {
   return (
     <motion.section 
       style={{ opacity }}
-      className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-primary-navy"
+      className="sticky top-0 h-screen flex items-center justify-center overflow-hidden bg-primary-navy z-0"
     >
       {/* Background Image with Overlay */}
       <motion.div style={{ scale }} className="absolute inset-0 z-0">

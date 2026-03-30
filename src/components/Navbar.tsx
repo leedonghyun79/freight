@@ -43,16 +43,17 @@ export default function Navbar() {
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <Image 
-            src="/images/tempFileForShare_20260322-181406.jpg" 
-            alt="PROTEX Logo" 
-            width={180} 
-            height={50} 
-            className={cn(
-              "object-contain transition-all h-8 md:h-12",
-              isScrolled ? "invert mix-blend-multiply brightness-0" : "mix-blend-screen"
-            )}
-          />
+          <div className="relative w-[150px] md:w-[180px] h-8 md:h-12">
+            <Image 
+              src={isScrolled ? "/images/프로텍스특수운송 로고-01.jpg" : "/images/tempFileForShare_20260322-181406.jpg"} 
+              alt="PROTEX Logo" 
+              fill
+              className={cn(
+                "object-contain transition-all duration-300",
+                isScrolled ? "mix-blend-multiply" : ""
+              )}
+            />
+          </div>
         </Link>
 
         {/* Desktop Menu */}
