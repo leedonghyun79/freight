@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로텍스특수운송 | 무진동 특수운송의 기준</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0B3B60', // 브로셔 기반 네이비 블루
+                        secondary: '#F58220', // 주황색 포인트 컬러
+                        dark: '#111111'
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans KR', sans-serif; }
+        
+        /* 메인 배경 이미지 설정 (업로드하신 화물차 사진) */
+        .hero-bg {
+            background-image: url('20260127_074853.jpg'), url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* 패럴랙스 효과 */
+        }
+        
+        .glass-panel {
+            background: rgba(11, 59, 96, 0.85);
+            backdrop-filter: blur(5px);
+        }
+
+        /* 네비게이션 바 스크롤 효과 */
+        .nav-scrolled {
+            background-color: rgba(0, 0, 0, 0.95);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased pt-20">
+
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="block">
+                        <img src="tempFileForShare_20260322-181406.jpg" alt="PROTEX Logo" class="h-12 w-auto object-contain" onerror="this.src='https://placehold.co/400x100/000/fff?text=PROTEX+LOGO'">
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-white hover:text-secondary px-3 py-2 text-sm font-medium transition-colors">PROTEX소개</a>
+                    <a href="#vehicles" class="text-white hover:text-secondary px-3 py-2 text-sm font-medium transition-colors">무진동특수차</a>
+                    <a href="#services" class="text-white hover:text-secondary px-3 py-2 text-sm font-medium transition-colors">서비스영역</a>
+                    <a href="#cases" class="text-white hover:text-secondary px-3 py-2 text-sm font-medium transition-colors">운송사례</a>
+                    <a href="#contact" class="bg-secondary text-white hover:bg-orange-600 px-4 py-2 rounded-md text-sm font-bold transition-colors">견적 및 운송문의</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-secondary focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium mobile-link">PROTEX소개</a>
+                <a href="#vehicles" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium mobile-link">무진동특수차</a>
+                <a href="#services" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium mobile-link">서비스영역</a>
+                <a href="#cases" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium mobile-link">운송사례</a>
+                <a href="#contact" class="text-secondary hover:text-white block px-3 py-2 rounded-md text-base font-bold mobile-link">견적 및 운송문의</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (배경화면) -->
+    <header class="relative hero-bg h-[80vh] flex items-center justify-center">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-10">
+            <span class="inline-block py-1 px-3 rounded-full bg-secondary text-white text-sm font-bold mb-4 animate-fade-in-up">SPECIAL CARGO TRANSPORT</span>
+            <h1 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight drop-shadow-lg">
+                특수 무진동 <span class="text-secondary">운송의 기준</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-10 font-light drop-shadow-md">
+                고가의 장비, 그 가치 그대로 안전하게 전합니다.<br class="hidden md:block">
+                프로텍스 특수운송은 고정밀 장비를 위한 전문 운송 솔루션을 제공합니다.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-secondary hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-transform transform hover:-translate-y-1 shadow-lg flex items-center justify-center">
+                    <i class="fas fa-file-signature mr-2"></i> 빠른 견적 문의
+                </a>
+                <a href="tel:1588-0000" class="bg-white hover:bg-gray-100 text-primary font-bold py-4 px-8 rounded-lg text-lg transition-transform transform hover:-translate-y-1 shadow-lg flex items-center justify-center">
+                    <i class="fas fa-phone-alt mr-2"></i> 1588-0000
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Feature Highlights -->
+    <div class="bg-primary text-white py-8 border-b-4 border-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="flex flex-col items-center">
+                    <div class="bg-white text-primary rounded-full p-4 mb-3 w-16 h-16 flex items-center justify-center text-2xl">
+                        <i class="fas fa-truck-moving"></i>
+                    </div>
+                    <h3 class="text-lg font-bold">무진동 에어서스펜션</h3>
+                    <p class="text-sm text-gray-300 mt-1">주행 중 충격 제로화</p>
+                </div>
+                <div class="flex flex-col items-center border-t md:border-t-0 md:border-l border-white/20 pt-6 md:pt-0">
+                    <div class="bg-white text-primary rounded-full p-4 mb-3 w-16 h-16 flex items-center justify-center text-2xl">
+                        <i class="fas fa-temperature-low"></i>
+                    </div>
+                    <h3 class="text-lg font-bold">항온·항습 시스템</h3>
+                    <p class="text-sm text-gray-300 mt-1">최적의 적재함 환경 유지</p>
+                </div>
+                <div class="flex flex-col items-center border-t md:border-t-0 md:border-l border-white/20 pt-6 md:pt-0">
+                    <div class="bg-white text-primary rounded-full p-4 mb-3 w-16 h-16 flex items-center justify-center text-2xl">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="text-lg font-bold">대형 파워리프트</h3>
+                    <p class="text-sm text-gray-300 mt-1">안전하고 신속한 상하차</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1. 회사소개 (About) -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 flex justify-center">
+                    <!-- Shield Logo 업로드 이미지 활용 -->
+                    <img src="tempFileForShare_20260322-194323.jpg" alt="Protex Shield Logo" class="max-w-sm w-full rounded-3xl shadow-2xl object-contain" onerror="this.src='https://placehold.co/400x400/0B3B60/fff?text=Shield+Logo'">
+                </div>
+                <div class="md:w-1/2">
+                    <h4 class="text-secondary font-bold tracking-wider mb-2">COMPANY INFO</h4>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">전문 기술을 가진 프로텍스와<br>함께 하세요.</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        프로텍스 특수운송은 반도체, 디스플레이, 의료기기, 항공우주 장비 등 외부 충격과 온도 변화에 민감한 <strong>고부가가치 화물 및 정밀 장비 운송 전문 기업</strong>입니다. 
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        최신 무진동차량과, 항온·항습 시스템, 그리고 대형 파워리프트를 갖추어 고객님의 소중한 자산을 가장 안전하고 정확하게 목적지까지 운송합니다. 전국 특수무진동차 차주와 직접 배차를 공유하는 네트워크로 가장 빠른 배차 시스템을 자랑합니다.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-secondary mr-3"></i> <span>적재물파손보상보험 10억 의무가입</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-secondary mr-3"></i> <span>전국 1~25톤 특수무진동차주 네트워크 구축</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-secondary mr-3"></i> <span>국가시설 및 대기업 보안어플설치 및 출입교육 이수 완료</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-secondary mr-3"></i> <span>전차종 스펀지완충제 구비 및 결박교육</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-secondary mr-3"></i> <span>삼성반도체, SK하이닉스 출입교육이수 & 리프트안전난간대설치</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-secondary mr-3"></i> <span>국가 문화재 및 유물,유적,미술품 전문포장팀 운영</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-secondary mr-3"></i> <span>코엑스 킨텍스 기타 전시회 전문 리프트차량 운행</span>
+
+
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. 무진동특수차 (Vehicles) -->
+    <section id="vehicles" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h4 class="text-secondary font-bold tracking-wider mb-2">TECHNOLOGY & SPEC</h4>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">보유차량 제원 및 핵심기술</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mt-6"></div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col lg:flex-row">
+                <!-- Vehicle Image Area -->
+                <div class="lg:w-1/2 relative min-h-[300px] lg:min-h-full">
+                    <img src="20260127_074853.jpg" alt="프로텍스 특수 화물차" class="absolute inset-0 w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?q=80&w=2070&auto=format&fit=crop'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8">
+                        <div>
+                            <span class="bg-secondary text-white px-3 py-1 rounded text-sm font-bold mb-2 inline-block">주력 차량</span>
+                            <h3 class="text-2xl font-bold text-white">최신 독일제 MAN트럭 & 1톤무진동 부터 25톤무진동 화물차</h3>
+                            <p class="text-gray-300 mt-1">4.2톤 대형 파워 리프트 장착 (폭 2,400 / 길이 6,200 / 높이 2,500 이상)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Specs List -->
+                <div class="lg:w-1/2 p-8 lg:p-12">
+                    <div class="space-y-8">
+                        <div class="flex">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-xl">1</div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold text-gray-900">무진동 에어서스펜션 <span class="text-sm font-normal text-gray-500">(Vibration-Free)</span></h4>
+                                <p class="mt-2 text-gray-600">도로의 충격을 공기압으로 흡수하여 적재물에 가해지는 충격을 제로에 가깝게 최소화합니다.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-xl">2</div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold text-gray-900">항온·항습 시스템 <span class="text-sm font-normal text-gray-500">(Climate Control)</span></h4>
+                                <p class="mt-2 text-gray-600">365일 실시간 온도 및 습도 모니터링 시스템을 가동하여 외부 날씨와 상관없이 적재함 내부 환경을 일정하게 유지합니다.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-xl">3</div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold text-gray-900">대형 파워리프트 <span class="text-sm font-normal text-gray-500">(Heavy Duty Lift)</span></h4>
+                                <p class="mt-2 text-gray-600">고중량 장비도 지게차 없이 안전하고 신속하게 상하차 작업이 가능합니다.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-xl">4</div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold text-gray-900">제품안전포장 및 완충시스템</h4>
+                                <p class="mt-2 text-gray-600">정전기 방지 포장 및 진동방지 전면 완충재(스펀지) 포장으로 안전성을 극대화하며, 적재함 내부 CCTV로 이동 중 실시간 모니터링을 진행합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 서비스영역 (Service Area) -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h4 class="text-secondary font-bold tracking-wider mb-2">SERVICE AREA</h4>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">주요 운송 분야</h2>
+                <p class="mt-4 text-gray-600">다양한 산업 분야의 정밀 장비를 맞춤형으로 운송합니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service Item 1 -->
+                <div class="bg-gray-50 border border-gray-100 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300 group">
+                    <div class="text-primary text-4xl mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-microchip"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">반도체 및 디스플레이 장비</h3>
+                    <p class="text-gray-600 text-sm">초정밀 노광장비, 세정장비, 검사장비 등 미세 진동에도 취약한 핵심 설비 운송</p>
+                </div>
+                <!-- Service Item 2 -->
+                <div class="bg-gray-50 border border-gray-100 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300 group">
+                    <div class="text-primary text-4xl mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-server"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">데이터센터 서버 및 통신장비</h3>
+                    <p class="text-gray-600 text-sm">네이버, 카카오 등 대기업 서버 및 서버랙 충격 방지 완벽 운송</p>
+                </div>
+                <!-- Service Item 3 -->
+                <div class="bg-gray-50 border border-gray-100 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300 group">
+                    <div class="text-primary text-4xl mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-heartbeat"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">의료 및 바이오 기기</h3>
+                    <p class="text-gray-600 text-sm">MRI, CT, 정밀 분석 기기 등 충격에 민감한 대형 병원장비</p>
+                </div>
+                <!-- Service Item 4 -->
+                <div class="bg-gray-50 border border-gray-100 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300 group">
+                    <div class="text-primary text-4xl mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-space-shuttle"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">항공우주 및 방위산업</h3>
+                    <p class="text-gray-600 text-sm">항공기 부품, 정밀 레이더, 방위산업용 전자 장비 특수 운송</p>
+                </div>
+                <!-- Service Item 5 -->
+                <div class="bg-gray-50 border border-gray-100 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300 group">
+                    <div class="text-primary text-4xl mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-palette"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">문화예술품 및 전시물</h3>
+                    <p class="text-gray-600 text-sm">박물관 유물, 미술관 회화 등 온습도 관리 및 충격에 절대적인 작품 운송</p>
+                </div>
+                <!-- Service Item 6 -->
+                <div class="bg-gray-50 border border-gray-100 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300 group">
+                    <div class="text-primary text-4xl mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-flask"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">기업/대학교 연구소 장비</h3>
+                    <p class="text-gray-600 text-sm">기업 연구소 및 대학교 연구소 장비 이전 및 설치 (항온항습기, 초저온 냉동고 등)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 운송사례 (Cases) -->
+    <section id="cases" class="py-20 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h4 class="text-secondary font-bold tracking-wider mb-2">PORTFOLIO</h4>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">실제 운송 사례</h2>
+                <p class="text-gray-300">프로텍스 특수운송의 안전하고 체계적인 실제 현장 모습입니다.</p>
+            </div>
+
+            <!-- 사진 갤러리 그리드 영역 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Case 1 -->
+                <div class="relative overflow-hidden rounded-xl shadow-lg border-2 border-white/10 group cursor-pointer">
+                    <img src="KakaoTalk_20241118_172833856_07.jpg" alt="대형 리프트 상하차" class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/111/fff?text=Case+1'">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white font-bold text-lg border-b-2 border-secondary pb-1">대형 윙바디 리프트 상하차 작업</p>
+                    </div>
+                </div>
+                
+                <!-- Case 2 -->
+                <div class="relative overflow-hidden rounded-xl shadow-lg border-2 border-white/10 group cursor-pointer">
+                    <img src="KakaoTalk_20241106_173223414_07.jpg" alt="데이터센터 서버 운송" class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/111/fff?text=Case+2'">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white font-bold text-lg border-b-2 border-secondary pb-1">데이터센터 서버/IT 장비 운송</p>
+                    </div>
+                </div>
+
+                <!-- Case 3 -->
+                <div class="relative overflow-hidden rounded-xl shadow-lg border-2 border-white/10 group cursor-pointer">
+                    <img src="20260316_095955.jpg" alt="정밀 배관 장비 운송" class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/111/fff?text=Case+3'">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white font-bold text-lg border-b-2 border-secondary pb-1">연구소 정밀/금속 장비 운송</p>
+                    </div>
+                </div>
+
+                <!-- Case 4 -->
+                <div class="relative overflow-hidden rounded-xl shadow-lg border-2 border-white/10 group cursor-pointer">
+                    <img src="20260119_130726.jpg" alt="대형 패널 장비 운송" class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/111/fff?text=Case+4'">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white font-bold text-lg border-b-2 border-secondary pb-1">한화우주센터 레이더 운송</p>
+                    </div>
+                </div>
+
+                <!-- Case 5 -->
+                <div class="relative overflow-hidden rounded-xl shadow-lg border-2 border-white/10 group cursor-pointer">
+                    <img src="20260311_102859.jpg" alt="고정밀 기기 포장" class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/111/fff?text=Case+5'">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white font-bold text-lg border-b-2 border-secondary pb-1">고정밀 기기 안전 포장 운송</p>
+                    </div>
+                </div>
+
+                <!-- Case 6 -->
+                <div class="relative overflow-hidden rounded-xl shadow-lg border-2 border-white/10 group cursor-pointer">
+                    <img src="20260311_102924.jpg" alt="다수 정밀장비 일괄 운송" class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/111/fff?text=Case+6'">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white font-bold text-lg border-b-2 border-secondary pb-1">다수 정밀 장비 일괄 결박 운송</p>
+                    </div>
+                </div>
+
+                <!-- Case 7 -->
+                <div class="relative overflow-hidden rounded-xl shadow-lg border-2 border-white/10 group cursor-pointer">
+                    <img src="KakaoTalk_20240925_171228899_07.jpg" alt="대형 기기 전면 완충 포장" class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/111/fff?text=Case+7'">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white font-bold text-lg border-b-2 border-secondary pb-1">대형 기기 전면 완충 포장</p>
+                    </div>
+                </div>
+
+                <!-- Case 8 -->
+                <div class="relative overflow-hidden rounded-xl shadow-lg border-2 border-white/10 group cursor-pointer">
+                    <img src="KakaoTalk_20240925_171228899_09.jpg" alt="흔들림 없는 결박" class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/111/fff?text=Case+8'">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white font-bold text-lg border-b-2 border-secondary pb-1">이중 밴드 결박으로 흔들림 제로</p>
+                    </div>
+                </div>
+
+                <!-- Case 9 -->
+                <div class="relative overflow-hidden rounded-xl shadow-lg border-2 border-white/10 group cursor-pointer">
+                    <img src="KakaoTalk_20240920_150105466_02.jpg" alt="무진동 적재함 및 항온항습기" class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/111/fff?text=Case+9'">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white font-bold text-lg border-b-2 border-secondary pb-1">무진동 적재함 내부 및 항온항습기</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-block bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition-colors">
+                    더 많은 사례 및 상담받기 <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 견적 및 운송문의 (Contact) -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col lg:flex-row">
+                
+                <!-- Contact Info Area -->
+                <div class="lg:w-5/12 bg-dark text-white p-10 md:p-12 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 opacity-10 transform translate-x-1/4 -translate-y-1/4">
+                        <i class="fas fa-truck-loading text-9xl"></i>
+                    </div>
+                    
+                    <div class="relative z-10">
+                        <h2 class="text-3xl font-bold mb-2">견적 및 운송 문의</h2>
+                        <p class="text-gray-400 mb-10">365일 언제든 친절하게 상담해 드립니다. 세금계산서 발행 가능합니다.</p>
+                        
+                        <div class="space-y-8">
+                            <div class="flex items-start">
+                                <div class="bg-primary p-3 rounded-lg text-secondary">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-sm text-gray-400">대표번호</p>
+                                    <p class="text-2xl font-bold">1588-0000</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary p-3 rounded-lg text-secondary">
+                                    <i class="fas fa-mobile-alt text-xl px-1"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-sm text-gray-400">휴대전화 직통</p>
+                                    <p class="text-xl font-bold">010-8964-8989</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary p-3 rounded-lg text-secondary">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-sm text-gray-400">이메일 문의</p>
+                                    <p class="text-lg font-bold">protexmove@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-16">
+                            <img src="tempFileForShare_20260322-181406.jpg" alt="Protex Logo" class="h-10 w-auto opacity-80" onerror="this.src='https://placehold.co/400x100/111/fff?text=PROTEX+LOGO'">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Area -->
+                <div class="lg:w-7/12 p-10 md:p-12">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">온라인 견적 문의</h3>
+                    <form onsubmit="event.preventDefault(); alert('문의가 성공적으로 접수되었습니다. 담당자가 곧 연락드리겠습니다.');" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">회사명 / 담당자명 *</label>
+                                <input type="text" id="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-shadow">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">연락처 *</label>
+                                <input type="tel" id="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-shadow">
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="start_loc" class="block text-sm font-medium text-gray-700 mb-1">상차지 (출발지)</label>
+                                <input type="text" id="start_loc" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-shadow">
+                            </div>
+                            <div>
+                                <label for="end_loc" class="block text-sm font-medium text-gray-700 mb-1">하차지 (도착지)</label>
+                                <input type="text" id="end_loc" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-shadow">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="item" class="block text-sm font-medium text-gray-700 mb-1">운송 품목 및 장비 종류</label>
+                            <input type="text" id="item" placeholder="예: 반도체 검사장비, 대형 서버랙 등" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-shadow">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">상세 문의 내용</label>
+                            <textarea id="message" rows="4" placeholder="장비의 크기, 무게, 특이사항(계단 유무 등), 희망 운송일자 등을 적어주시면 더 정확한 견적이 가능합니다." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-shadow"></textarea>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <input id="privacy" type="checkbox" required class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                            <label for="privacy" class="ml-2 block text-sm text-gray-600">
+                                개인정보 수집 및 이용에 동의합니다.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full bg-primary hover:bg-blue-900 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors shadow-md">
+                            견적 문의 접수하기
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <img src="tempFileForShare_20260322-181406.jpg" alt="PROTEX Logo" class="h-10 w-auto mb-4 mx-auto md:mx-0 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" onerror="this.src='https://placehold.co/400x100/000/fff?text=PROTEX+LOGO'">
+                    <p class="text-sm mt-2">특수 무진동 운송의 기준, 프로텍스와 함께 안전하게 운송하세요.</p>
+                </div>
+                <div class="text-sm text-center md:text-right space-y-2">
+                    <p>대표번호 : <strong class="text-white">1588-0000</strong> | 직통 : <strong class="text-white">010-8964-8989</strong></p>
+                    <p>이메일 : protexmove@gmail.com</p>
+                    <p class="mt-4 pt-4 border-t border-gray-800">Copyright &copy; 2026 PROTEX SPECIAL CARGO TRANSPORT. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // 모바일 메뉴 토글
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // 모바일 메뉴 링크 클릭 시 메뉴 닫기
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // 스크롤 시 네비게이션 바 스타일 변경 (배경 투명도 등 조정 시 사용)
+        /* 현재는 블랙으로 고정되어 있지만, 투명 헤더를 원할 경우 이 코드를 활용 가능
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+        */
+    </script>
+</body>
+</html>
