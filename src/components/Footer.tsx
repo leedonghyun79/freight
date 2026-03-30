@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { 
   Building2, 
   MapPin, 
@@ -11,104 +12,120 @@ import {
 } from "lucide-react";
 
 export default function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
-    <footer className="bg-[#050B1D] py-20 relative overflow-hidden">
-      {/* Background Subtle Accent */}
-      <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-primary-navy/20 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2"></div>
-      
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20 pb-20 border-b border-white/5">
-          {/* Logo & About */}
-          <div className="md:col-span-4 max-w-sm">
-            <Link href="/" className="inline-flex items-center space-x-2 mb-8">
-               <div className="w-10 h-10 bg-primary-navy rounded-lg flex items-center justify-center">
-                  <span className="text-white font-outfit font-bold text-xl">P</span>
+    <footer id="contact" className="bg-[#1a1a1a] text-white pt-24 pb-12 border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-20">
+          {/* Left: Company Info */}
+          <div>
+            <div className="mb-12">
+               <Image 
+                 src="/images/tempFileForShare_20260322-181406.jpg" 
+                 alt="PROTEX Logo" 
+                 width={200} 
+                 height={60} 
+                 className="object-contain mix-blend-screen"
+               />
+            </div>
+            
+            <div className="space-y-6 text-sm text-gray-400 leading-relaxed">
+               <p>본사 : 경기도 안산시 단원구 시화호수로 835</p>
+               <p>사업자등록번호 : 000-00-00000 | 대표이사 : 홍길동</p>
+               <div className="pt-6 border-t border-white/10 space-y-4">
+                  <div className="flex items-center space-x-4">
+                     <span className="text-white font-bold w-20 tracking-widest">TEL</span>
+                     <span className="text-lg text-white">1588-0000</span>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                     <span className="text-white font-bold w-20 tracking-widest">FAX</span>
+                     <span>031-000-0001</span>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                     <span className="text-white font-bold w-20 tracking-widest">E-MAIL</span>
+                     <span>protexmove@gmail.com</span>
+                  </div>
                </div>
-               <span className="font-outfit font-bold text-2xl tracking-tighter text-white">PROTEX</span>
-            </Link>
-            <p className="text-gray-500 text-sm leading-relaxed mb-10">
-              고객님의 소중한 화물을 위해 항온/항습 및 무진동 시스템을 완비한 전문 운송 파트너입니다. 
-              최상의 장비와 전문 인력으로 안전한 이동의 기준이 되어 드리겠습니다.
-            </p>
-            <div className="flex items-center space-x-2">
-               <div className="w-1.5 h-1.5 rounded-full bg-primary-orange animate-pulse"></div>
-               <span className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Insurance Coverage 1B KRW</span>
+            </div>
+            
+            <div className="mt-12">
+               <div className="text-[10px] text-gray-500 font-bold tracking-[0.3em] uppercase">
+                  © 2026 PROTEX Special Cargo. ALL RIGHTS RESERVED.
+               </div>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="md:col-span-2">
-            <h4 className="text-white text-sm font-bold uppercase tracking-widest mb-10">Quick Menu</h4>
-            <ul className="space-y-6">
-              {["회사 소개", "서비스 섹션", "기술 정보", "운송 사례"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-gray-500 text-sm hover:text-primary-orange transition-colors">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Right: Quick Inquiry Form (Protex-six Content + TopLogis Style) */}
+          <div className="bg-[#222] p-10 rounded-2xl shadow-2xl border border-white/5">
+            <h3 className="text-xl font-bold mb-8">
+               견적 및 운송문의
+            </h3>
+            
+            <form className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input 
+                  type="text" 
+                  placeholder="성함/업체명" 
+                  className="bg-[#333] border-none text-white text-sm p-4 w-full focus:ring-1 focus:ring-primary-orange outline-none transition-all placeholder:text-gray-500"
+                />
+                <input 
+                  type="text" 
+                  placeholder="연락처" 
+                  className="bg-[#333] border-none text-white text-sm p-4 w-full focus:ring-1 focus:ring-primary-orange outline-none transition-all placeholder:text-gray-500"
+                />
+              </div>
+              
+              <select className="bg-[#333] border-none text-gray-400 text-sm p-4 w-full focus:ring-1 focus:ring-primary-orange outline-none transition-all appearance-none cursor-pointer">
+                <option value="">운송구분 (반도체/의료기기/전산장비 등)</option>
+                <option value="semiconductor">반도체 및 디스플레이</option>
+                <option value="medical">의료 및 정밀 기기</option>
+                <option value="datacenter">전산/데이터센터 이전</option>
+                <option value="art">예술품 및 문화재</option>
+                <option value="other">기타 특수 화물</option>
+              </select>
 
-          {/* Contact Info */}
-          <div className="md:col-span-4 lg:col-span-3">
-             <h4 className="text-white text-sm font-bold uppercase tracking-widest mb-10">Connect</h4>
-             <ul className="space-y-8">
-                <li className="flex items-start space-x-4 group cursor-pointer">
-                   <div className="p-3 rounded-xl bg-white/5 text-gray-500 group-hover:text-primary-orange transition-colors">
-                      <Phone size={18} />
-                   </div>
-                   <div>
-                      <div className="text-[10px] text-gray-600 mb-1">고객센터</div>
-                      <div className="text-white text-base font-bold">1588-0000</div>
-                   </div>
-                </li>
-                <li className="flex items-start space-x-4 group cursor-pointer">
-                   <div className="p-3 rounded-xl bg-white/5 text-gray-500 group-hover:text-primary-orange transition-colors">
-                      <Mail size={18} />
-                   </div>
-                   <div>
-                      <div className="text-[10px] text-gray-600 mb-1">사업문의</div>
-                      <div className="text-white text-base font-bold">protexmove@gmail.com</div>
-                   </div>
-                </li>
-                <li className="flex items-start space-x-4 group">
-                   <div className="p-3 rounded-xl bg-white/5 text-gray-500 group-hover:text-primary-orange transition-colors">
-                      <MapPin size={18} />
-                   </div>
-                   <div className="max-w-[200px]">
-                      <div className="text-[10px] text-gray-600 mb-1">사무소</div>
-                      <div className="text-white text-xs font-bold leading-relaxed">경기도 평택시 일원 및 상암 데이터센터 협력사무소</div>
-                   </div>
-                </li>
-             </ul>
-          </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input 
+                  type="text" 
+                  placeholder="출발지 (지역)" 
+                  className="bg-[#333] border-none text-white text-sm p-4 w-full focus:ring-1 focus:ring-primary-orange outline-none transition-all placeholder:text-gray-500"
+                />
+                <input 
+                  type="text" 
+                  placeholder="목적지 (지역)" 
+                  className="bg-[#333] border-none text-white text-sm p-4 w-full focus:ring-1 focus:ring-primary-orange outline-none transition-all placeholder:text-gray-500"
+                />
+              </div>
 
-          {/* Back to top */}
-          <div className="md:col-span-2 flex flex-col items-center md:items-end justify-center">
-             <button 
-                onClick={scrollToTop}
-                className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-primary-orange transition-all group shadow-2xl"
-             >
-                <ChevronUp className="group-hover:-translate-y-1 transition-transform" />
-             </button>
-             <span className="text-[10px] text-gray-600 font-bold uppercase tracking-[0.3em] mt-4">TOP</span>
+              <textarea 
+                rows={3} 
+                placeholder="상세 내용을 입력해 주세요."
+                className="bg-[#333] border-none text-white text-sm p-4 w-full focus:ring-1 focus:ring-primary-orange outline-none transition-all placeholder:text-gray-500"
+              ></textarea>
+              
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-4">
+                <label className="flex items-center space-x-3 text-xs text-gray-500 cursor-pointer hover:text-gray-300 transition-colors group self-start sm:self-center">
+                  <div className="relative">
+                    <input type="checkbox" className="peer hidden" />
+                    <div className="w-5 h-5 border-2 border-primary-navy/20 bg-white/5 rounded-md peer-checked:bg-primary-orange peer-checked:border-primary-orange transition-all"></div>
+                  </div>
+                  <span className="group-hover:text-primary-orange transition-colors">개인정보 수집 및 이용 동의 (필수)</span>
+                </label>
+                <button className="bg-primary-orange text-white px-12 py-4 font-black hover:bg-accent-orange transition-all rounded-sm text-sm tracking-widest w-full sm:w-auto uppercase">
+                   신청하기
+                </button>
+              </div>
+            </form>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-gray-600 text-xs">
-           <div className="mb-6 md:mb-0">
-              © 2026 PROTEX Special Cargo. All Rights Reserved.
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-600 font-bold tracking-widest uppercase">
+           <div className="flex space-x-8 mb-4 md:mb-0">
+              <a href="#" className="hover:text-white transition-colors">이용약관</a>
+              <a href="#" className="hover:text-white transition-colors text-gray-400">개인정보처리방침</a>
            </div>
-           <div className="flex items-center space-x-8">
-              <Link href="#" className="hover:text-white transition-colors">이용약관</Link>
-              <Link href="#" className="hover:text-white transition-colors font-bold text-gray-400">개인정보처리방침</Link>
-              <Link href="#" className="hover:text-white transition-colors">관리자 로그인</Link>
+           <div className="flex items-center space-x-2">
+              <span className="w-1 h-1 rounded-full bg-gray-700"></span>
+              <span>Site by Antigravity Digital</span>
            </div>
         </div>
       </div>

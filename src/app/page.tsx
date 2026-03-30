@@ -1,23 +1,23 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import AboutSection from "@/components/AboutSection";
-import TechnologySpecs from "@/components/TechnologySpecs";
+import FeatureStrip from "@/components/FeatureStrip";
+import MiddleSection from "@/components/MiddleSection";
 import ServiceSection from "@/components/ServiceSection";
+import TechnologySpecs from "@/components/TechnologySpecs";
 import PortfolioCarousel from "@/components/PortfolioCarousel";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
 import FloatingAction from "@/components/FloatingAction";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col antialiased bg-white selection:bg-primary-orange selection:text-white">
       <Navbar />
       <Hero />
-      <AboutSection />
-      <TechnologySpecs />
+      <FeatureStrip />
+      <MiddleSection />
       <ServiceSection />
+      <TechnologySpecs />
       <PortfolioCarousel />
-      <ContactSection />
       <FloatingAction />
       <Footer />
     </main>

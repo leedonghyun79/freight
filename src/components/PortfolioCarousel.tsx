@@ -17,31 +17,34 @@ import "swiper/css/effect-fade";
 const cases = [
   {
     id: 1,
-    title: "반도체 노광장비 초정밀 운송",
-    description: "S사 평택 캠퍼스 신규 라인 도입을 위한 진동 흡수 시스템 가동. 수백억 원대 초정밀 장비를 완벽하게 안착.",
-    category: "Semiconductor",
-    image: "/images/case-1.png",
+    title: "국가연구소 정밀 설비 이전",
+    description: "국가 연구소 내 초정밀 실험 장비의 안전한 이전. 무진동 차량과 전문 인력을 통한 완벽한 운송 솔루션 제공.",
+    category: "Precision Equipment",
+    image: "/images/20260311_102859.jpg",
+    specs: ["Air Suspension", "Power Lift", "Clean Room"],
   },
   {
     id: 2,
-    title: "데이터센터 서버랙 일괄 이전",
-    description: "N사 신규 상암 데이터센터 서버 및 네트워크 장비 400여 랙 무사고 운송. 대형 파워리프트 활용 상하차 지원.",
-    category: "Data Center",
-    image: "/images/case-2.png",
+    title: "대기업 반도체 라인 증설 운송",
+    description: "S사 평택 캠퍼스 신규 라인 도입을 위한 진동 흡수 시스템 가동. 수백억 원대 초정밀 장비를 완벽하게 안착.",
+    category: "Semiconductor",
+    image: "/images/20260311_102924.jpg",
+    specs: ["Constant Temp", "Vibration Free", "Security"],
   },
   {
     id: 3,
-    title: "대학병원 MRI 시스템 정밀 설치",
+    title: "종합병원 MRI 검진 장비 반입",
     description: "K대학교 병원 MRI실 이전 및 정밀 설치. 외부 날씨와 상관없는 항온항습 시스템 유지를 통한 장비 보호.",
-    category: "Medical",
-    image: "/images/case-3.png",
+    category: "Medical Device",
+    image: "/images/20260313_072759.jpg",
+    specs: ["Heavy Duty Lift", "Precision Setup"],
   },
   {
     id: 4,
-    title: "방위산업 정밀 레이더 운송",
-    description: "H에어로스페이스 항공기 부품 및 정밀 레이더 특수 운송. 국가 보안 규정 및 세이프티 가이드 준수.",
-    category: "Aerospace",
-    image: "/images/hero.png", // Generic fallback
+    title: "전국 공공기관 서버센터 통합 이전",
+    category: "Data Center",
+    image: "/images/20260316_095955.jpg",
+    specs: ["Multiple Trucks", "Safety Check"],
   },
 ];
 
@@ -57,7 +60,7 @@ export default function PortfolioCarousel() {
             <span className="text-primary-orange font-bold text-sm tracking-widest uppercase mb-4 block">
               PORTFOLIO
             </span>
-            <h2 className="text-4xl md:text-5xl font-outfit font-black text-primary-navy">
+            <h2 className="text-4xl md:text-5xl font-outfit font-black text-primary-navy tracking-tight">
               실제 <span className="text-primary-orange">운송 사례</span>
             </h2>
           </div>
