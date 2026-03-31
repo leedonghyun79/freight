@@ -89,10 +89,18 @@ export default function Navbar() {
       {/* Mobile Menu Overlay */}
       <div
         className={cn(
-          "fixed inset-0 bg-primary-navy z-40 flex flex-col items-center justify-center space-y-8 lg:hidden transition-transform duration-500",
+          "fixed inset-0 bg-primary-navy z-50 flex flex-col items-center justify-center space-y-8 lg:hidden transition-transform duration-500",
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
+        {/* Close Button in Overlay */}
+        <button 
+          onClick={() => setIsMobileMenuOpen(false)}
+          className="absolute top-8 right-8 p-2 text-white/70 hover:text-white transition-colors"
+        >
+          <X size={32} />
+        </button>
+
         {navLinks.map((link) => {
           const isContact = link.name === "견적 문의";
           return (

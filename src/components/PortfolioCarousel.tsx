@@ -93,7 +93,7 @@ export default function PortfolioCarousel() {
             <span className="text-gray-400 font-bold text-sm tracking-widest uppercase mb-4 block">
               ACTUAL CASES
             </span>
-            <h2 className="text-[36px] font-black text-primary-navy tracking-tight">
+            <h2 className="text-2xl md:text-[36px] font-black text-primary-navy tracking-tight">
               실제 <span className="text-primary-orange">운송 사례</span>
             </h2>
           </div>

@@ -52,14 +52,14 @@ export default function Hero() {
             프로텍스만의 전담팀과 정밀 관제 시스템으로 처음부터 끝까지 책임집니다.
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-6">
+          <div className="flex flex-col items-center gap-4">
             <a 
               href="#contact" 
-              className="px-10 py-5 bg-primary-orange text-white font-normal rounded-full hover:bg-orange-600 transition-all duration-300 shadow-2xl shadow-primary-orange/40 uppercase tracking-widest text-[15px] flex items-center justify-center cursor-pointer"
+              className="w-full max-w-xs px-10 py-5 bg-primary-orange text-white font-normal rounded-full hover:bg-orange-600 transition-all duration-300 shadow-2xl shadow-primary-orange/40 uppercase tracking-widest text-[15px] flex items-center justify-center cursor-pointer"
             >
               빠른 견적 문의
             </a>
-            <button className="px-10 py-5 border-2 border-white/50 text-white font-normal rounded-full hover:bg-white hover:text-primary-navy transition-all duration-300 backdrop-blur-md group text-[15px] uppercase tracking-widest">
+            <button className="w-full max-w-xs px-10 py-5 border-2 border-white/50 text-white font-normal rounded-full hover:bg-white hover:text-primary-navy transition-all duration-300 backdrop-blur-md group text-[15px] uppercase tracking-widest">
               고객센터 1588-0000
             </button>
           </div>

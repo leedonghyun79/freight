@@ -45,12 +45,12 @@ export default function MiddleSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[36px] font-outfit font-black text-white mb-8 tracking-tight"
+            className="text-2xl md:text-[36px] font-outfit font-black text-white mb-8 tracking-tight"
           >
             프로텍스를 <span className="text-primary-orange">선택해야 하는 이유</span>
           </motion.h2>
         </div>
-
+ 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {items.map((item, idx) => (
             <motion.div
@@ -65,7 +65,7 @@ export default function MiddleSection() {
                 <h3 className="text-xl font-bold text-white mb-6 group-hover:text-primary-orange transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-gray-400 text-base leading-relaxed break-keep">
+                <p className="text-gray-400 text-[15px] md:text-base leading-relaxed break-keep">
                   {item.description}
                 </p>
               </div>

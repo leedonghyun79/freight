@@ -40,33 +40,33 @@ export default function ContactSection() {
               <span className="text-primary-orange font-bold text-sm tracking-widest uppercase mb-6 block">
                 CONTACT US
               </span>
-              <h2 className="text-4xl lg:text-5xl font-outfit font-black mb-8 leading-tight tracking-tight">
+              <h2 className="text-2xl lg:text-5xl font-outfit font-black mb-8 leading-tight tracking-tight">
                 고객 맞춤 <br />
                 <span className="text-primary-orange">운송 솔루션</span>
               </h2>
-              <p className="text-gray-400 text-base leading-relaxed mb-12 max-w-xs font-medium">
+              <p className="text-gray-400 text-[13px] leading-relaxed mb-12 max-w-xs font-medium">
                 365일 24시간 실시간 관제 시스템 가동. <br />
                 지금 바로 전문가와 상담하세요.
               </p>
               
-              <div className="space-y-8">
+              <div className="space-y-12">
                 <div className="group flex items-center space-x-6">
-                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-primary-orange group-hover:bg-primary-orange group-hover:text-white transition-all shadow-xl">
-                    <PhoneCall size={24} />
+                  <div className="w-20 h-20 rounded-[2rem] bg-white/5 border border-white/10 flex items-center justify-center text-primary-orange group-hover:bg-primary-orange group-hover:text-white transition-all shadow-xl">
+                    {/* Icon Removed */}
                   </div>
                   <div>
-                    <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Company Representative</div>
-                    <div className="text-white text-xl font-bold tracking-tight group-hover:text-primary-orange transition-colors">1588-0000</div>
+                    <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-2">Company Representative</div>
+                    <div className="text-white text-3xl font-black tracking-tighter group-hover:text-primary-orange transition-colors">1588-0000</div>
                   </div>
                 </div>
 
                 <div className="group flex items-center space-x-6">
-                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-primary-orange group-hover:bg-primary-orange group-hover:text-white transition-all shadow-xl">
-                    <Mail size={24} />
+                  <div className="w-20 h-20 rounded-[2rem] bg-white/5 border border-white/10 flex items-center justify-center text-primary-orange group-hover:bg-primary-orange group-hover:text-white transition-all shadow-xl">
+                    {/* Icon Removed */}
                   </div>
                   <div>
-                    <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Email Inquiry</div>
-                    <div className="text-white text-lg font-bold tracking-tight group-hover:text-primary-orange transition-colors">protex@protex.pro.kr</div>
+                    <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-2">Email Inquiry</div>
+                    <div className="text-white text-xl font-black group-hover:text-primary-orange transition-colors">protex@protex.pro.kr</div>
                   </div>
                 </div>
               </div>
@@ -109,14 +109,14 @@ export default function ContactSection() {
                    exit={{ opacity: 0, x: -20 }}
                 >
                   <div className="mb-12">
-                    <h3 className="text-3xl font-black text-primary-navy mb-3">익스프레스 견적 신청</h3>
-                    <p className="text-gray-400 text-sm font-medium">필수 정보(*)를 입력하시면 30분 이내에 답변 드립니다.</p>
+                    <h3 className="text-2xl font-black text-primary-navy mb-3">익스프레스 견적 신청</h3>
+                    <p className="text-gray-400 text-[13px] font-medium">필수 정보(*)를 입력하시면 30분 이내에 답변 드립니다.</p>
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="space-y-2 group">
-                        <label className="text-xs font-black text-primary-navy flex items-center">
+                        <label className="text-[11px] font-black text-primary-navy flex items-center uppercase tracking-wider">
                           성함 / 업체명 <span className="text-primary-orange ml-1">*</span>
                         </label>
                         <input 
@@ -124,20 +124,20 @@ export default function ContactSection() {
                            required 
                            autoComplete="off"
                            placeholder="담당자명 또는 회사명을 입력하세요" 
-                           className="w-full bg-gray-50 border-b-2 border-gray-100 py-4 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal"
+                           className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-sm"
                            value={formData.name}
                            onChange={(e) => setFormData({...formData, name: e.target.value})}
                         />
                       </div>
                       <div className="space-y-2 group">
-                        <label className="text-xs font-black text-primary-navy flex items-center">
+                        <label className="text-[11px] font-black text-primary-navy flex items-center uppercase tracking-wider">
                           연락처 <span className="text-primary-orange ml-1">*</span>
                         </label>
                         <input 
                            type="tel" 
                            required 
                            placeholder="010-0000-0000" 
-                           className="w-full bg-gray-50 border-b-2 border-gray-100 py-4 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal"
+                           className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-sm"
                            value={formData.phone}
                            onChange={(e) => setFormData({...formData, phone: e.target.value})}
                         />
@@ -146,21 +146,21 @@ export default function ContactSection() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="space-y-2">
-                        <label className="text-xs font-black text-primary-navy">상차지 (출발지)</label>
+                        <label className="text-[11px] font-black text-primary-navy uppercase tracking-wider">상차지 (출발지)</label>
                         <input 
                            type="text" 
                            placeholder="지역명 또는 상세주소" 
-                           className="w-full bg-gray-50 border-b-2 border-gray-100 py-4 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal"
+                           className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-sm"
                            value={formData.startLoc}
                            onChange={(e) => setFormData({...formData, startLoc: e.target.value})}
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-xs font-black text-primary-navy">하차지 (도착지)</label>
+                        <label className="text-[11px] font-black text-primary-navy uppercase tracking-wider">하차지 (도착지)</label>
                         <input 
                            type="text" 
                            placeholder="지역명 또는 상세주소" 
-                           className="w-full bg-gray-50 border-b-2 border-gray-100 py-4 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal"
+                           className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-sm"
                            value={formData.endLoc}
                            onChange={(e) => setFormData({...formData, endLoc: e.target.value})}
                         />
@@ -168,11 +168,11 @@ export default function ContactSection() {
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-xs font-black text-primary-navy">운송 품목 및 수량</label>
+                      <label className="text-[11px] font-black text-primary-navy uppercase tracking-wider">운송 품목 및 수량</label>
                       <input 
                          type="text" 
                          placeholder="배송 화물의 상세 정보 (예: 서버랙 2개, 반도체 장비 2대 등)" 
-                         className="w-full bg-gray-50 border-b-2 border-gray-100 py-4 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal"
+                         className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-sm"
                          value={formData.item}
                          onChange={(e) => setFormData({...formData, item: e.target.value})}
                       />

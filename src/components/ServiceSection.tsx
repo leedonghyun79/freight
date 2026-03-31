@@ -71,6 +71,31 @@ export default function ServiceSection() {
           </motion.h2>
         </div>
 
+        {/* Tabs (Navigation) - Moved Above Card */}
+        <div className="flex flex-wrap justify-center gap-x-4 gap-y-3 mb-10">
+          {services.map((service, idx) => {
+            const isActive = activeIdx === idx;
+            return (
+              <button
+                key={service.title}
+                onClick={() => setActiveIdx(idx)}
+                className="group relative flex flex-col items-center pb-2 transition-all"
+              >
+                <span className={`text-sm lg:text-base font-bold transition-all duration-300 ${isActive ? "text-primary-navy scale-110" : "text-gray-400 hover:text-primary-navy"
+                  }`}>
+                  {service.title}
+                </span>
+                {isActive && (
+                  <motion.div
+                    layoutId="active-nav-line"
+                    className="absolute -bottom-1 left-0 right-0 h-[3px] bg-primary-orange rounded-full"
+                  />
+                )}
+              </button>
+            );
+          })}
+        </div>
+
         {/* Main Content Card (Slide) */}
         <div className="relative h-[450px] md:h-[600px] w-full bg-primary-navy rounded-[40px] overflow-hidden shadow-2xl">
           <AnimatePresence mode="wait">
@@ -94,10 +119,10 @@ export default function ServiceSection() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <h3 className="text-3xl md:text-5xl font-black mb-6 leading-tight">
+                  <h3 className="text-2xl md:text-5xl font-black mb-6 leading-tight">
                     {services[activeIdx].title}
                   </h3>
-                  <p className="max-w-3xl mx-auto text-primary-orange text-lg md:text-2xl mb-6 font-bold leading-relaxed break-keep">
+                  <p className="max-w-3xl mx-auto text-primary-orange text-[15px] md:text-2xl mb-6 font-bold leading-relaxed break-keep">
                     {services[activeIdx].description}
                   </p>
                   <p className="max-w-3xl mx-auto text-gray-300 text-sm md:text-lg mb-10 leading-relaxed font-light opacity-90 break-keep">
@@ -107,31 +132,6 @@ export default function ServiceSection() {
               </div>
             </motion.div>
           </AnimatePresence>
-        </div>
-
-        {/* Tabs (Navigation) */}
-        <div className="mt-12 flex flex-wrap justify-center gap-x-8 gap-y-6">
-          {services.map((service, idx) => {
-            const isActive = activeIdx === idx;
-            return (
-              <button
-                key={service.title}
-                onClick={() => setActiveIdx(idx)}
-                className="group relative flex flex-col items-center pb-2 transition-all"
-              >
-                <span className={`text-sm lg:text-base font-bold transition-all duration-300 ${isActive ? "text-primary-navy scale-110" : "text-gray-400 hover:text-primary-navy"
-                  }`}>
-                  {service.title}
-                </span>
-                {isActive && (
-                  <motion.div
-                    layoutId="active-nav-line"
-                    className="absolute -bottom-1 left-0 right-0 h-[3px] bg-primary-orange rounded-full"
-                  />
-                )}
-              </button>
-            );
-          })}
         </div>
       </div>
     </section>

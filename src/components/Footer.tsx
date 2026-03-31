@@ -104,7 +104,7 @@ export default function Footer() {
             <a href="#" className="hover:text-primary-orange transition-colors">Customer Support</a>
           </div>
           <div className="flex items-center space-x-4">
-            <span>© 2026 PROTEX Special Cargo. ALL RIGHTS RESERVED.</span>
+            <span>© 2026 PROTEX Special Cargo. <br className="md:hidden" /> ALL RIGHTS RESERVED.</span>
           </div>
         </div>
       </div>

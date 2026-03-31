@@ -50,7 +50,7 @@ export default function TechnologySpecs() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[36px] font-outfit font-black text-primary-navy tracking-tight"
+            className="text-2xl md:text-[36px] font-outfit font-black text-primary-navy tracking-tight"
           >
             보유차량 <span className="text-primary-orange">제원 및 핵심기술</span>
           </motion.h2>
