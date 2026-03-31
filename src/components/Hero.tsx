@@ -42,7 +42,7 @@ export default function Hero() {
             SPECIAL CARGO TRANSPORT
           </span>
 
-          <h1 className="text-[30px] md:text-7xl font-outfit font-black text-white leading-[1.2] mb-6 md:mb-8 tracking-tighter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+          <h1 className="text-[30px] md:text-[60px] font-outfit font-black text-white leading-[1.2] mb-6 md:mb-8 tracking-tighter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
             프로텍스가 제안하는<br />
             <span className="text-primary-orange">운송의 새로운 기준</span>
           </h1>
