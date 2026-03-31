@@ -42,25 +42,25 @@ export default function Hero() {
             SPECIAL CARGO TRANSPORT
           </span>
 
-          <h1 className="text-4xl md:text-5xl font-outfit font-black text-white leading-[1.2] mb-8 tracking-tighter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+          <h1 className="text-[30px] md:text-7xl font-outfit font-black text-white leading-[1.2] mb-6 md:mb-8 tracking-tighter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
             프로텍스가 제안하는<br />
             <span className="text-primary-orange">운송의 새로운 기준</span>
           </h1>
 
-          <p className="text-lg md:text-[22px] text-gray-100 font-medium mb-12 max-w-4xl mx-auto leading-relaxed drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)] opacity-90">
+          <p className="text-[15px] md:text-[22px] text-gray-100 font-medium mb-10 md:mb-12 max-w-4xl mx-auto leading-relaxed drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)] opacity-90 break-keep">
             고가의 반도체, 의료장비, 고부가가치 화물을 가치 그대로 안전하게 전합니다.<br className="hidden md:block" />
             프로텍스만의 전담팀과 정밀 관제 시스템으로 처음부터 끝까지 책임집니다.
           </p>
 
-          <div className="flex flex-col items-center gap-4">
+          <div className="flex flex-row justify-center items-center gap-3 md:gap-4 max-w-[400px] mx-auto w-full">
             <a 
               href="#contact" 
-              className="w-full max-w-xs px-10 py-5 bg-primary-orange text-white font-normal rounded-full hover:bg-orange-600 transition-all duration-300 shadow-2xl shadow-primary-orange/40 uppercase tracking-widest text-[15px] flex items-center justify-center cursor-pointer"
+              className="flex-1 py-4 md:py-5 bg-primary-orange text-white font-bold rounded-full hover:bg-orange-600 transition-all duration-300 shadow-2xl shadow-primary-orange/40 uppercase tracking-widest text-[13px] md:text-[15px] flex items-center justify-center cursor-pointer whitespace-nowrap px-4"
             >
               빠른 견적 문의
             </a>
-            <button className="w-full max-w-xs px-10 py-5 border-2 border-white/50 text-white font-normal rounded-full hover:bg-white hover:text-primary-navy transition-all duration-300 backdrop-blur-md group text-[15px] uppercase tracking-widest">
-              고객센터 1588-0000
+            <button className="flex-1 py-4 md:py-5 border-2 border-white/50 text-white font-bold rounded-full hover:bg-white hover:text-primary-navy transition-all duration-300 backdrop-blur-md group text-[13px] md:text-[15px] uppercase tracking-widest whitespace-nowrap px-4">
+              <span className="hidden md:inline">고객센터</span> 1588-0000
             </button>
           </div>
         </motion.div>

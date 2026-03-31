@@ -43,7 +43,7 @@ export default function Navbar() {
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <div className="relative w-[200px] h-[80px]">
+          <div className="relative w-[160px] h-[50px]">
             <Image 
               src={isScrolled ? "/images/로고_c.png" : "/images/로고_w.png"} 
               alt="PROTEX Logo" 

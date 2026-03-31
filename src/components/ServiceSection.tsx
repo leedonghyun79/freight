@@ -54,10 +54,10 @@ export default function ServiceSection() {
   const [activeIdx, setActiveIdx] = useState(0);
 
   return (
-    <section id="services" className="py-24 bg-white overflow-hidden scroll-mt-24">
+    <section id="services" className="py-16 md:py-24 bg-white overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="text-center mb-16 px-6">
+        <div className="text-center mb-10 md:mb-16 px-6">
           <span className="text-gray-400 font-bold text-sm tracking-widest uppercase mb-4 block">
             MAJOR FIELDS
           </span>
@@ -65,14 +65,14 @@ export default function ServiceSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[36px] font-outfit font-black text-primary-navy tracking-tight"
+            className="text-[24px] md:text-[36px] font-outfit font-black text-primary-navy tracking-tight"
           >
             주요 <span className="text-primary-orange">운송 분야</span>
           </motion.h2>
         </div>
 
         {/* Tabs (Navigation) - Moved Above Card */}
-        <div className="flex flex-wrap justify-center gap-x-4 gap-y-3 mb-10">
+        <div className="flex flex-wrap justify-center gap-x-4 md:gap-x-[65px] gap-y-3 mb-10">
           {services.map((service, idx) => {
             const isActive = activeIdx === idx;
             return (
@@ -97,7 +97,7 @@ export default function ServiceSection() {
         </div>
 
         {/* Main Content Card (Slide) */}
-        <div className="relative h-[450px] md:h-[600px] w-full bg-primary-navy rounded-[40px] overflow-hidden shadow-2xl">
+        <div className="relative h-[240px] md:h-[600px] w-full bg-primary-navy rounded-[40px] overflow-hidden shadow-2xl">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIdx}
@@ -119,13 +119,13 @@ export default function ServiceSection() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <h3 className="text-2xl md:text-5xl font-black mb-6 leading-tight">
+                  <h3 className="text-2xl md:text-5xl font-black mb-4 md:mb-6 leading-tight">
                     {services[activeIdx].title}
                   </h3>
-                  <p className="max-w-3xl mx-auto text-primary-orange text-[15px] md:text-2xl mb-6 font-bold leading-relaxed break-keep">
+                  <p className="max-w-3xl mx-auto text-primary-orange text-[15px] md:text-2xl mb-4 md:mb-6 font-bold leading-relaxed break-keep">
                     {services[activeIdx].description}
                   </p>
-                  <p className="max-w-3xl mx-auto text-gray-300 text-sm md:text-lg mb-10 leading-relaxed font-light opacity-90 break-keep">
+                  <p className="max-w-3xl mx-auto text-gray-300 text-xs md:text-lg mb-0 md:leading-relaxed font-light opacity-90 break-keep line-clamp-3 md:line-clamp-none">
                     {services[activeIdx].longDesc}
                   </p>
                 </motion.div>

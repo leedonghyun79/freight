@@ -21,7 +21,7 @@ export default function FloatingAction() {
   };
 
   return (
-    <div className="fixed bottom-8 right-8 z-[100] flex flex-col items-end space-y-4">
+    <div className="fixed bottom-8 right-[20px] z-[100] flex flex-col items-end space-y-4">
       <AnimatePresence>
         {isVisible && (
           <motion.div

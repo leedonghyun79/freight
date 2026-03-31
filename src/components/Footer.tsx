@@ -87,7 +87,7 @@ export default function Footer() {
                   <div>
                     <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Registration Details</div>
                     <div className="text-sm font-bold text-gray-300">
-                      대표이사: 홍길동 | 사업자번호: 000-00-00000
+                      대표: 김태호 | 사업자번호: 000-00-00000
                     </div>
                   </div>
                 </div>

@@ -30,9 +30,9 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-24 bg-[#f8f9fa] scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="bg-white rounded-[60px] shadow-2xl overflow-hidden flex flex-col lg:flex-row min-h-[750px] border border-gray-100">
+        <div className="bg-white rounded-none shadow-2xl overflow-hidden flex flex-col lg:flex-row min-h-[750px] border border-gray-100">
           {/* Left Info Area */}
-          <div className="lg:w-5/12 bg-primary-navy p-12 md:p-20 relative overflow-hidden flex flex-col justify-between text-white">
+          <div className="lg:w-5/12 bg-primary-navy p-[35px] relative overflow-hidden flex flex-col justify-between text-white">
             {/* Visual Background Accent */}
             <div className="absolute -top-20 -right-20 w-80 h-80 bg-primary-orange/10 rounded-full blur-3xl pointer-events-none"></div>
             
@@ -50,56 +50,46 @@ export default function ContactSection() {
               </p>
               
               <div className="space-y-12">
-                <div className="group flex items-center space-x-6">
-                  <div className="w-20 h-20 rounded-[2rem] bg-white/5 border border-white/10 flex items-center justify-center text-primary-orange group-hover:bg-primary-orange group-hover:text-white transition-all shadow-xl">
-                    {/* Icon Removed */}
-                  </div>
-                  <div>
-                    <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-2">Company Representative</div>
-                    <div className="text-white text-3xl font-black tracking-tighter group-hover:text-primary-orange transition-colors">1588-0000</div>
-                  </div>
+                <div className="group">
+                  <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-2 font-bold opacity-70">Company Representative</div>
+                  <div className="text-white text-4xl lg:text-5xl font-black tracking-tighter group-hover:text-primary-orange transition-colors">1588-0000</div>
                 </div>
 
-                <div className="group flex items-center space-x-6">
-                  <div className="w-20 h-20 rounded-[2rem] bg-white/5 border border-white/10 flex items-center justify-center text-primary-orange group-hover:bg-primary-orange group-hover:text-white transition-all shadow-xl">
-                    {/* Icon Removed */}
-                  </div>
-                  <div>
-                    <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-2">Email Inquiry</div>
-                    <div className="text-white text-xl font-black group-hover:text-primary-orange transition-colors">protex@protex.pro.kr</div>
-                  </div>
+                <div className="group">
+                  <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-2 font-bold opacity-70">Email Inquiry</div>
+                  <div className="text-white text-xl lg:text-2xl font-black group-hover:text-primary-orange transition-colors">protex@protex.pro.kr</div>
                 </div>
               </div>
 
             </div>
 
             {/* Business Details (Enhanced Density) */}
-            <div className="relative z-10 pt-12 border-t border-white/10 mt-12 grid grid-cols-1 gap-6">
-               <div className="space-y-4">
+            <div className="relative z-10 pt-8 border-t border-white/10 mt-12 grid grid-cols-1 gap-6">
+               <div className="space-y-6">
                   <div className="flex flex-col">
                     <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Office Address</span>
-                    <span className="text-xs text-gray-300 leading-relaxed font-medium">경기도 평택시 고덕동 1234-5 프로젝트 타워 801호</span>
+                    <span className="text-xs text-gray-300 leading-relaxed font-medium break-keep">경기도 평택시 고덕동 1234-5 프로젝트 타워 801호</span>
                   </div>
-                  <div className="flex justify-between items-center pr-12">
+                  <div className="flex items-start gap-12">
                      <div className="flex flex-col">
                         <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Business No.</span>
-                        <span className="text-xs text-gray-300 font-medium">123-45-67890</span>
+                        <span className="text-xs text-gray-300 font-medium whitespace-nowrap">123-45-67890</span>
                      </div>
                      <div className="flex flex-col">
-                        <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">CEO</span>
-                        <span className="text-xs text-gray-300 font-medium">홍길동</span>
+                        <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Representative</span>
+                        <span className="text-xs text-gray-300 font-medium whitespace-nowrap">김태호</span>
                      </div>
                   </div>
                </div>
                <div className="flex items-center space-x-4">
                   <div className="w-2 h-2 rounded-full bg-primary-orange animate-pulse"></div>
-                  <span className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Available 24/7 National Wide Support</span>
+                  <span className="text-[10px] text-gray-500 font-bold uppercase tracking-widest leading-none">Available 24/7 National Wide Support</span>
                </div>
             </div>
           </div>
 
           {/* Right Form Area */}
-          <div className="lg:w-7/12 p-12 md:p-20 relative bg-white">
+          <div className="lg:w-7/12 p-[35px] relative bg-white">
             <AnimatePresence mode="wait">
               {!isSubmitted ? (
                 <motion.div
@@ -171,8 +161,8 @@ export default function ContactSection() {
                       <label className="text-[11px] font-black text-primary-navy uppercase tracking-wider">운송 품목 및 수량</label>
                       <input 
                          type="text" 
-                         placeholder="배송 화물의 상세 정보 (예: 서버랙 2개, 반도체 장비 2대 등)" 
-                         className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-sm"
+                         placeholder="배송 화물의 상세 정보" 
+                         className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-[13px] md:text-sm"
                          value={formData.item}
                          onChange={(e) => setFormData({...formData, item: e.target.value})}
                       />
@@ -182,8 +172,8 @@ export default function ContactSection() {
                       <label className="text-xs font-black text-primary-navy">상세 문의 내용</label>
                       <textarea 
                         rows={2}
-                        placeholder="기타 요청사항이나 특이사항을 적어주세요." 
-                        className="w-full bg-gray-50 border-b-2 border-gray-100 py-4 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold resize-none placeholder:text-gray-300 placeholder:font-normal"
+                        placeholder="기타요청 및 특이사항 작성" 
+                        className="w-full bg-gray-50 border-b-2 border-gray-100 py-4 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold resize-none placeholder:text-gray-300 placeholder:font-normal text-[13px] md:text-sm"
                         value={formData.message}
                         onChange={(e) => setFormData({...formData, message: e.target.value})}
                       />
@@ -197,8 +187,8 @@ export default function ContactSection() {
                             <CheckCheck size={14} className="text-white scale-0 peer-checked:scale-100 transition-transform" />
                           </div>
                         </div>
-                        <span className="text-sm font-bold text-gray-500 group-hover:text-primary-navy transition-colors">개인정보 수집 및 이용 동의</span>
-                        <button type="button" className="text-[11px] font-bold text-gray-300 border-b border-gray-200 hover:text-primary-orange hover:border-primary-orange transition-all ml-2">전문보기</button>
+                        <span className="text-[13px] font-bold text-gray-500 group-hover:text-primary-navy transition-colors">개인정보 수집 및 이용 동의</span>
+                        <button type="button" className="text-[12px] font-bold text-gray-300 border-b border-gray-200 hover:text-primary-orange hover:border-primary-orange transition-all ml-2">전문보기</button>
                       </label>
 
                       <button 

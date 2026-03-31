@@ -88,18 +88,18 @@ export default function PortfolioCarousel() {
     <section id="portfolio" className="py-24 bg-white overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Standardized Section Header with Navigation */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-          <div>
-            <span className="text-gray-400 font-bold text-sm tracking-widest uppercase mb-4 block">
+        <div className="flex flex-row justify-between items-end mb-16">
+          <div className="flex-1">
+            <span className="text-gray-400 font-bold text-xs md:text-sm tracking-widest uppercase mb-2 md:mb-4 block">
               ACTUAL CASES
             </span>
-            <h2 className="text-2xl md:text-[36px] font-black text-primary-navy tracking-tight">
+            <h2 className="text-2xl md:text-[36px] font-black text-primary-navy tracking-tight whitespace-nowrap">
               실제 <span className="text-primary-orange">운송 사례</span>
             </h2>
           </div>
           
           {/* Header Navigation Buttons */}
-          <div className="flex items-center space-x-3 mt-8 md:mt-0">
+          <div className="flex items-center space-x-2 md:space-x-3">
             <button
               id="work-prev"
               className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-primary-navy hover:text-white hover:border-primary-navy transition-all duration-300 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
