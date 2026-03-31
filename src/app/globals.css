@@ -1,16 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --primary-navy: #042A2B;  /* Protex Deep Teal/Black */
+  --primary-navy: #001a40;  /* Protex Deep Blue Navy */
   --primary-orange: #E87C00; /* Protex Orange */
   --accent-orange: #C76A00;  /* Darker Orange for Hover */
   --surface: #F8FAFC;
   --glass: rgba(255, 255, 255, 0.7);
-  --dark-surface: #031E1F;
+  --dark-surface: #000c20;
   
-  --font-outfit: "Outfit", sans-serif;
-  --font-inter: "Inter", sans-serif;
-
   --background: #ffffff;
   --foreground: #0F172A;
   --bg-gray: #f8f9fa;

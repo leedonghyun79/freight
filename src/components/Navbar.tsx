@@ -14,9 +14,9 @@ function cn(...inputs: ClassValue[]) {
 const navLinks = [
   { name: "회사 소개", href: "#about" },
   { name: "비즈니스 영역", href: "#services" },
-  { name: "특수 운송사례", href: "#portfolio" },
   { name: "핵심 기술", href: "#technology" },
-  { name: "고객센터", href: "#contact" },
+  { name: "운송 사례", href: "#portfolio" },
+  { name: "견적 문의", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -43,42 +43,34 @@ export default function Navbar() {
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <div className="relative w-[150px] md:w-[180px] h-8 md:h-12">
+          <div className="relative w-[200px] h-[80px]">
             <Image 
-              src={isScrolled ? "/images/프로텍스특수운송 로고-01.jpg" : "/images/tempFileForShare_20260322-181406.jpg"} 
+              src={isScrolled ? "/images/로고_c.png" : "/images/로고_w.png"} 
               alt="PROTEX Logo" 
               fill
-              className={cn(
-                "object-contain transition-all duration-300",
-                isScrolled ? "mix-blend-multiply" : ""
-              )}
+              className="object-contain transition-all duration-300"
             />
           </div>
         </Link>
 
-        {/* Desktop Menu */}
         <div className="hidden lg:flex items-center space-x-12">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={cn(
-                "text-[13px] font-bold transition-colors hover:text-primary-orange uppercase tracking-wider",
-                isScrolled ? "text-[#333]" : "text-white/90"
-              )}
-            >
-              {link.name}
-            </Link>
-          ))}
-          
-          <div className="h-4 w-px bg-gray-300 mx-4 hidden xl:block"></div>
-          
-          <button className={cn(
-            "p-2 rounded-full transition-colors",
-            isScrolled ? "text-[#333] hover:bg-gray-100" : "text-white hover:bg-white/10"
-          )}>
-            <Menu size={20} />
-          </button>
+          {navLinks.map((link) => {
+            const isContact = link.name === "견적 문의";
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={cn(
+                  "text-[13px] font-bold transition-colors hover:text-primary-orange uppercase tracking-wider",
+                  isContact
+                    ? "text-primary-orange"
+                    : (isScrolled ? "text-primary-navy" : "text-white/90")
+                )}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Mobile Toggle */}
@@ -101,16 +93,22 @@ export default function Navbar() {
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        {navLinks.map((link) => (
-          <Link
-            key={link.name}
-            href={link.href}
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="text-white text-2xl font-bold hover:text-primary-orange transition-colors"
-          >
-            {link.name}
-          </Link>
-        ))}
+        {navLinks.map((link) => {
+          const isContact = link.name === "견적 문의";
+          return (
+            <Link
+              key={link.name}
+              href={link.href}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={cn(
+                "text-2xl font-bold transition-colors",
+                isContact ? "text-primary-orange" : "text-white hover:text-primary-orange"
+              )}
+            >
+              {link.name}
+            </Link>
+          );
+        })}
         <div className="absolute bottom-10 flex items-center text-white/60 space-x-2">
           <Phone size={18} />
           <span>031-000-0000</span>

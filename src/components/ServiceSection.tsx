@@ -54,7 +54,7 @@ export default function ServiceSection() {
   const [activeIdx, setActiveIdx] = useState(0);
 
   return (
-    <section id="services" className="py-24 bg-white overflow-hidden">
+    <section id="services" className="py-24 bg-white overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="text-center mb-16 px-6">

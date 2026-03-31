@@ -24,7 +24,7 @@ const items = [
 
 export default function MiddleSection() {
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section id="about" className="relative py-32 overflow-hidden scroll-mt-24">
       {/* Background with Dark Overlay */}
       <div className="absolute inset-0 z-0 scale-110">
         <Image
@@ -39,7 +39,7 @@ export default function MiddleSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         <div className="text-center mb-16 max-w-4xl mx-auto">
           <span className="text-gray-300 font-bold text-sm tracking-widest uppercase mb-4 block">
-            COMPANY INFO
+            WHY PROTEX
           </span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ export default function MiddleSection() {
             viewport={{ once: true }}
             className="text-[36px] font-outfit font-black text-white mb-8 tracking-tight"
           >
-            프로텍스 <span className="text-primary-orange">전문 인프라</span>
+            프로텍스를 <span className="text-primary-orange">선택해야 하는 이유</span>
           </motion.h2>
         </div>
 
