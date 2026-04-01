@@ -52,7 +52,7 @@ export default function ContactSection() {
               <div className="space-y-12">
                 <div className="group">
                   <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-2 font-bold opacity-70">Company Representative</div>
-                  <div className="text-white text-4xl lg:text-5xl font-black tracking-tighter group-hover:text-primary-orange transition-colors">1588-0000</div>
+                  <div className="text-white text-4xl lg:text-5xl font-black tracking-tighter group-hover:text-primary-orange transition-colors">1833-6362</div>
                 </div>
 
                 <div className="group">

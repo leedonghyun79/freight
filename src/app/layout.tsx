@@ -29,8 +29,9 @@ export default function RootLayout({
     <html
       lang="ko"
       className={`${inter.variable} ${outfit.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col font-inter">
+      <body className="min-h-full flex flex-col font-inter" suppressHydrationWarning>
         {children}
       </body>
     </html>

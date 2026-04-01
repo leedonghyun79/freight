@@ -34,9 +34,6 @@ export default function Footer() {
               프로펙스 특수운송은 반도체, 의료기기, 전산장비 등 고가의 정밀 자산을 현지 기술 인력과 실시간 관제 시스템을 통해 <br />가장 안전하게 운송합니다.
             </p>
             <div className="flex space-x-4">
-              <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-primary-orange hover:text-white transition-all cursor-pointer">
-                <span className="text-[10px] font-bold">BLOG</span>
-              </div>
               {/* Other social icons if needed */}
             </div>
           </div>
@@ -53,7 +50,7 @@ export default function Footer() {
                   <div className="mt-1 text-primary-orange"><Phone size={18} /></div>
                   <div>
                     <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Representative Number</div>
-                    <div className="text-lg font-black text-white">1588-0000</div>
+                    <div className="text-lg font-black text-white">1833-6362</div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">

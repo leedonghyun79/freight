@@ -60,7 +60,7 @@ export default function Hero() {
               빠른 견적 문의
             </a>
             <button className="flex-1 py-4 md:py-5 border-2 border-white/50 text-white font-bold rounded-full hover:bg-white hover:text-primary-navy transition-all duration-300 backdrop-blur-md group text-[13px] md:text-[15px] uppercase tracking-widest whitespace-nowrap px-4">
-              <span className="hidden md:inline">고객센터</span> 1588-0000
+              <span className="hidden md:inline">고객센터</span> 1833-6362
             </button>
           </div>
         </motion.div>

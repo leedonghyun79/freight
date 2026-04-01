@@ -46,7 +46,7 @@ export default function FloatingAction() {
 
             {/* Direct Call Button */}
             <motion.a
-              href="tel:1588-0000"
+              href="tel:1833-6362"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className="w-14 h-14 bg-primary-navy rounded-full shadow-2xl flex items-center justify-center text-white group relative border border-white/10"

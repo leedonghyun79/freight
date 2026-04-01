@@ -119,7 +119,7 @@ export default function Navbar() {
         })}
         <div className="absolute bottom-10 flex items-center text-white/60 space-x-2">
           <Phone size={18} />
-          <span>031-000-0000</span>
+          <span>1833-6362</span>
         </div>
       </div>
     </nav>
