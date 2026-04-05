@@ -48,46 +48,49 @@ export default function Hero() {
               alt="PROTEX Professional Special Cargo Transport"
               fill
               priority
-              className="object-cover object-right"
+              className="object-cover object-center md:object-right transition-all duration-700"
             />
           </motion.div>
         </AnimatePresence>
         
         {/* Adjusted Gradients to Reveal the Truck Brand (MAN Logo Area) while protecting text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-black/80 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-black/80 z-10 md:hidden"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-black/80 z-10 hidden md:block"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-primary-navy/80 z-10"></div>
       </motion.div>
 
-      <motion.div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full flex justify-end">
+      <motion.div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full flex justify-center md:justify-end">
         <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 30, x: 0 }}
+          animate={{ opacity: 1, y: 0, x: 0 }}
+          whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="flex flex-col items-start text-left max-w-4xl"
+          className="flex flex-col items-center text-center md:items-start md:text-left max-w-4xl"
         >
-          <span className="text-primary-orange text-sm font-black tracking-[0.4em] uppercase mb-6 block drop-shadow-md">
+          <span className="text-primary-orange text-xs md:text-sm font-black tracking-[0.4em] uppercase mb-4 md:mb-6 block drop-shadow-md">
             SPECIAL CARGO TRANSPORT
           </span>
 
-          <h1 className="text-[32px] md:text-[64px] font-outfit font-black text-white leading-[1.1] mb-6 md:mb-8 tracking-tighter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+          <h1 className="text-[28px] md:text-[64px] font-outfit font-black text-white leading-[1.2] md:leading-[1.1] mb-6 md:mb-8 tracking-tighter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] break-keep">
             프로텍스가 제안하는<br />
-            <span className="text-primary-orange text-[36px] md:text-[72px]">운송의 새로운 기준</span>
+            <span className="text-primary-orange text-[32px] md:text-[72px]">운송의 새로운 기준</span>
           </h1>
 
-          <p className="text-[16px] md:text-[20px] text-gray-100 font-medium mb-10 md:mb-12 max-w-2xl leading-relaxed drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)] opacity-90 break-keep">
-            고가의 반도체, 의료장비, 고부가가치 화물을 가치 그대로 안전하게 전합니다.<br />
+          <p className="text-[14px] md:text-[20px] text-gray-100 font-medium mb-10 md:mb-12 max-w-2xl leading-relaxed drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)] opacity-90 break-keep">
+            고가의 반도체, 의료장비, 고부가가치 화물을 가치 그대로 안전하게 전합니다.<br className="hidden md:block" />
             프로텍스만의 전담팀과 정밀 관제 시스템으로 처음부터 끝까지 책임집니다.
           </p>
 
-          <div className="flex flex-row justify-start items-center gap-3 md:gap-4 w-full">
+          <div className="flex flex-col md:flex-row justify-center md:justify-start items-center gap-3 md:gap-4 w-full">
             <a 
-              href="#contact" 
-              className="px-8 py-4 md:py-5 bg-primary-orange text-white font-bold rounded-full hover:bg-orange-600 transition-all duration-300 shadow-2xl shadow-primary-orange/40 uppercase tracking-widest text-[13px] md:text-[15px] flex items-center justify-center cursor-pointer whitespace-nowrap"
+              href="https://pf.kakao.com/_qMeuX/chat" 
+              target="_blank"
+              className="w-full md:w-auto px-10 py-4 md:py-5 bg-primary-orange text-white font-bold rounded-full hover:bg-orange-600 transition-all duration-300 shadow-2xl shadow-primary-orange/40 uppercase tracking-widest text-[13px] md:text-[15px] flex items-center justify-center cursor-pointer whitespace-nowrap"
             >
               빠른 견적 문의
             </a>
-            <button className="px-8 py-4 md:py-5 border-2 border-white/50 text-white font-bold rounded-full hover:bg-white hover:text-primary-navy transition-all duration-300 backdrop-blur-md group text-[13px] md:text-[15px] uppercase tracking-widest whitespace-nowrap">
-              <span className="hidden md:inline">고객센터</span> 1833-6362
+            <button className="w-full md:w-auto px-10 py-4 md:py-5 border-2 border-white/50 text-white font-bold rounded-full hover:bg-white hover:text-primary-navy transition-all duration-300 backdrop-blur-md group text-[13px] md:text-[15px] uppercase tracking-widest whitespace-nowrap">
+              <span className="md:inline">고객센터</span> 1833-6362
             </button>
           </div>
         </motion.div>

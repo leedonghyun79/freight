@@ -30,9 +30,8 @@ export default function FloatingAction() {
             exit={{ opacity: 0, y: 20, scale: 0.8 }}
             className="flex flex-col items-end space-y-4"
           >
-            {/* KakaoTalk Button (Mockup) */}
             <motion.a
-              href="https://pf.kakao.com/_xxxx" // Change to actual ID
+              href="https://pf.kakao.com/_qMeuX/chat"
               target="_blank"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}

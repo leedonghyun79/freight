@@ -68,7 +68,7 @@ const cases = [
     title: "원자력발전소내 실험장비 이전",
     description: "운송 중 적재함 내부의 실시간 상태 확인. 항온항습 모니터링 및 CCTV를 통해 도착지까지 화물의 안전 상태를 실시간으로 모니터링.",
     category: "Monitoring",
-    image: "/images/KakaoTalk_20240920_150105466_02.jpg",
+    image: "/images/원자력발전소내실험장비.jpg",
     specs: ["Real-time CCTV", "Climate Log"],
   },
 ];

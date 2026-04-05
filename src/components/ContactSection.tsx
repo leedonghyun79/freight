@@ -6,11 +6,32 @@ import {
   Mail, 
   Smartphone, 
   ChevronRight, 
-  CheckCheck 
+  CheckCheck,
+  X
 } from "lucide-react";
 import { useState } from "react";
 
+const PRIVACY_TEXT = `
+[개인정보 수집 및 이용 동의 전문]
+
+1. 수집하는 개인정보 항목
+- 필수항목: 성함/업체명, 연락처, 상차지(출발지), 하차지(도착지)
+- 선택항목: 운송 품목 및 수량, 상세 문의 내용
+
+2. 개인정보의 수집 및 이용 목적
+- 화물 운송 견적 상담 및 서비스 제공을 위한 본인 확인
+- 서비스 이용에 따른 민원 사항 처리 및 고지사항 전달
+
+3. 개인정보의 보유 및 이용기간
+- 원칙적으로 개인정보의 수집 및 이용 목적이 달성되면 지체 없이 파기합니다.
+- 단, 상담 이력 관리 및 관련 법령에 의하여 보존할 필요가 있는 경우 일정 기간 보관할 수 있습니다. (최대 1년)
+
+4. 동의 거부 권리 및 불이익
+- 귀하는 개인정보 수집 및 이용에 거부할 권리가 있습니다. 단, 필수 항목 수집에 거부하실 경우 견적 상담 서비스 이용이 제한될 수 있습니다.
+`;
+
 export default function ContactSection() {
+  const [showPrivacy, setShowPrivacy] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -187,8 +208,14 @@ export default function ContactSection() {
                             <CheckCheck size={14} className="text-white scale-0 peer-checked:scale-100 transition-transform" />
                           </div>
                         </div>
-                        <span className="text-[13px] font-bold text-gray-500 group-hover:text-primary-navy transition-colors">개인정보 수집 및 이용 동의</span>
-                        <button type="button" className="text-[12px] font-bold text-gray-300 border-b border-gray-200 hover:text-primary-orange hover:border-primary-orange transition-all ml-2">전문보기</button>
+                        <span className="text-[13px] font-bold text-gray-500 group-hover:text-primary-navy transition-colors tracking-tight leading-none">개인정보 수집 및 이용 동의</span>
+                        <button 
+                          type="button" 
+                          onClick={() => setShowPrivacy(true)}
+                          className="text-[11px] font-bold text-gray-400 border-b border-gray-200 hover:text-primary-orange hover:border-primary-orange transition-all ml-2 h-4 leading-none"
+                        >
+                          전문보기
+                        </button>
                       </label>
 
                       <button 
@@ -228,6 +255,50 @@ export default function ContactSection() {
           </div>
         </div>
       </div>
+
+      {/* Privacy Policy Modal */}
+      <AnimatePresence>
+        {showPrivacy && (
+          <div className="fixed inset-0 z-[1000] flex items-center justify-center p-6">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowPrivacy(false)}
+              className="absolute inset-0 bg-primary-navy/80 backdrop-blur-md"
+            ></motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="bg-white rounded-3xl shadow-2xl w-full max-w-2xl max-h-[80vh] overflow-hidden relative z-10 flex flex-col"
+            >
+              <div className="p-8 border-b border-gray-50 flex items-center justify-between">
+                <h3 className="text-xl font-black text-primary-navy">개인정보 처리방침</h3>
+                <button
+                  onClick={() => setShowPrivacy(false)}
+                  className="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:bg-gray-50 transition-colors"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+              <div className="p-8 overflow-y-auto bg-gray-50/50">
+                <pre className="text-sm text-gray-600 leading-relaxed font-sans whitespace-pre-wrap break-keep">
+                  {PRIVACY_TEXT}
+                </pre>
+              </div>
+              <div className="p-8 border-t border-gray-50 text-center">
+                <button
+                  onClick={() => setShowPrivacy(false)}
+                  className="px-10 py-4 bg-primary-navy text-white font-black rounded-2xl hover:bg-black transition-all shadow-xl shadow-primary-navy/20"
+                >
+                  확인했습니다
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
