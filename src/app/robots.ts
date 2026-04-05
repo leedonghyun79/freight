@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://protexmove.com/sitemap.xml',
+    sitemap: 'https://xn--2o2bo3ogka6rr6n9os3kcc0g.com/sitemap.xml',
   }
 }

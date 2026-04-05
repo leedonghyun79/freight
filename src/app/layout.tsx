@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "프로텍스 특수운송 | 무진동 특수운송 전문 솔루션",
     description: "반도체·의료기기 등 초정밀 자산을 위한 자체 무진동 특수운송 전문 기업.\n전문 엔지니어 팀이 제공하는 가장 안전한 맞춤형 정밀 운송 솔루션을 경험하세요.",
-    url: "https://protexmove.com", // Adjust to actual production domain if known
+    url: "https://xn--2o2bo3ogka6rr6n9os3kcc0g.com", // Adjust to actual production domain if known
     siteName: "프로텍스",
     images: [
       {
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     images: ["/images/메인트럭사진.jpg"],
   },
   alternates: {
-    canonical: "https://protexmove.com",
+    canonical: "https://xn--2o2bo3ogka6rr6n9os3kcc0g.com",
   },
   robots: {
     index: true,
@@ -76,14 +76,14 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "WebSite",
                 "name": "프로텍스",
-                "url": "https://protexmove.com"
+                "url": "https://xn--2o2bo3ogka6rr6n9os3kcc0g.com"
               },
               {
                 "@context": "https://schema.org",
                 "@type": "Organization",
                 "name": "프로텍스",
-                "url": "https://protexmove.com",
-                "logo": "https://protexmove.com/images/로고_c.png",
+                "url": "https://xn--2o2bo3ogka6rr6n9os3kcc0g.com",
+                "logo": "https://xn--2o2bo3ogka6rr6n9os3kcc0g.com/images/로고_c.png",
                 "address": {
                   "@type": "PostalAddress",
                   "addressLocality": "평택시",
