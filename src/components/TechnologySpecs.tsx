@@ -42,8 +42,8 @@ export default function TechnologySpecs() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="text-center mb-16 lg:mb-24">
-          <span className="text-gray-400 font-bold text-sm tracking-widest uppercase mb-4 block">
+        <div className="text-center mb-10 md:mb-16 lg:mb-24">
+          <span className="text-gray-400 font-bold text-sm tracking-widest uppercase mb-[5px] md:mb-4 block">
             TECHNOLOGY & SPEC
           </span>
           <motion.h2

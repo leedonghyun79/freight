@@ -67,7 +67,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-24 mb-16">
           <div className="lg:w-1/3">
-            <div className="mb-8">
+            <button 
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="mb-8 block"
+            >
               <Image
                 src="/images/로고_w.png"
                 alt="PROTEX Logo"
@@ -75,7 +78,7 @@ export default function Footer() {
                 height={50}
                 className="object-contain"
               />
-            </div>
+            </button>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm mb-8 break-keep">
               프로펙스 특수운송은 반도체, 의료기기, 전산장비 등 고가의 정밀 자산을 현지 기술 인력과 실시간 관제 시스템을 통해 가장 안전하게 운송합니다.
             </p>
@@ -126,7 +129,7 @@ export default function Footer() {
                   <div>
                     <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Registration Details</div>
                     <div className="text-sm font-bold text-gray-300">
-                      대표: 김태호 | 사업자번호: 000-00-00000
+                      대표: 김태호
                     </div>
                   </div>
                 </div>
@@ -162,21 +165,21 @@ export default function Footer() {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="bg-white rounded-3xl shadow-2xl w-full max-w-3xl max-h-[85vh] overflow-hidden relative z-10 flex flex-col"
+              className="bg-white rounded-2xl md:rounded-3xl shadow-2xl w-full max-w-3xl max-h-[90vh] md:max-h-[85vh] overflow-hidden relative z-10 flex flex-col mx-4"
             >
-              <div className="p-8 border-b border-gray-100 flex items-center justify-between bg-white relative z-20">
-                <h3 className="text-xl font-black text-primary-navy">
+              <div className="p-6 md:p-8 border-b border-gray-100 flex items-center justify-between bg-white relative z-20">
+                <h3 className="text-lg md:text-xl font-black text-primary-navy">
                   {modalType === "privacy" ? "개인정보처리방침" : "이용약관"}
                 </h3>
                 <button
                   onClick={() => setModalType(null)}
-                  className="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:bg-gray-50 transition-colors"
+                  className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:bg-gray-50 transition-colors"
                 >
-                  <X size={20} />
+                  <X size={18} />
                 </button>
               </div>
-              <div className="p-8 overflow-y-auto bg-gray-50/50">
-                <div className="text-sm text-gray-600 leading-relaxed font-sans whitespace-pre-wrap break-keep space-y-4">
+              <div className="p-6 md:p-8 overflow-y-auto bg-gray-50/50 flex-1">
+                <div className="text-xs md:text-sm text-gray-600 leading-relaxed font-sans whitespace-pre-wrap break-keep space-y-4">
                   {modalType === "privacy" ? (
                     <div dangerouslySetInnerHTML={{ __html: PRIVACY_POLICY_TEXT.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
                   ) : (
@@ -184,10 +187,10 @@ export default function Footer() {
                   )}
                 </div>
               </div>
-              <div className="p-8 border-t border-gray-100 text-center bg-white">
+              <div className="p-6 md:p-8 border-t border-gray-100 text-center bg-white">
                 <button
                   onClick={() => setModalType(null)}
-                  className="px-10 py-4 bg-primary-navy text-white font-black rounded-2xl hover:bg-black transition-all shadow-xl shadow-primary-navy/20"
+                  className="w-full md:w-auto px-10 py-4 bg-primary-navy text-white font-black rounded-xl md:rounded-2xl hover:bg-black transition-all shadow-xl shadow-primary-navy/20"
                 >
                   확인했습니다
                 </button>

@@ -48,7 +48,9 @@ export default function Hero() {
               alt="PROTEX Professional Special Cargo Transport"
               fill
               priority
-              className="object-cover object-center md:object-right transition-all duration-700"
+              className={`object-cover object-center transition-all duration-700 ${
+                currentImageIndex === 1 ? "md:object-left" : "md:object-right"
+              }`}
             />
           </motion.div>
         </AnimatePresence>
@@ -59,7 +61,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-primary-navy/80 z-10"></div>
       </motion.div>
 
-      <motion.div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full flex justify-center md:justify-end">
+      <motion.div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full flex justify-center md:justify-end mt-[100px] md:mt-0">
         <motion.div
           initial={{ opacity: 0, y: 30, x: 0 }}
           animate={{ opacity: 1, y: 0, x: 0 }}
@@ -81,23 +83,44 @@ export default function Hero() {
             프로텍스만의 전담팀과 정밀 관제 시스템으로 처음부터 끝까지 책임집니다.
           </p>
 
-          <div className="flex flex-col md:flex-row justify-center md:justify-start items-center gap-3 md:gap-4 w-full">
+          <div className="flex flex-row justify-center md:justify-start items-center gap-3 md:gap-4 w-full">
             <a 
               href="https://pf.kakao.com/_qMeuX/chat" 
               target="_blank"
-              className="w-full md:w-auto px-10 py-4 md:py-5 bg-primary-orange text-white font-bold rounded-full hover:bg-orange-600 transition-all duration-300 shadow-2xl shadow-primary-orange/40 uppercase tracking-widest text-[13px] md:text-[15px] flex items-center justify-center cursor-pointer whitespace-nowrap"
+              className="flex-1 md:flex-none px-4 md:px-10 py-3.5 md:py-5 bg-primary-orange text-white font-bold rounded-full hover:bg-orange-600 transition-all duration-300 shadow-2xl shadow-primary-orange/40 uppercase tracking-widest text-[11px] md:text-[15px] flex items-center justify-center cursor-pointer whitespace-nowrap"
             >
               빠른 견적 문의
             </a>
-            <button className="w-full md:w-auto px-10 py-4 md:py-5 border-2 border-white/50 text-white font-bold rounded-full hover:bg-white hover:text-primary-navy transition-all duration-300 backdrop-blur-md group text-[13px] md:text-[15px] uppercase tracking-widest whitespace-nowrap">
+            <button className="flex-1 md:flex-none px-4 md:px-10 py-3.5 md:py-5 border-2 border-white/50 text-white font-bold rounded-full hover:bg-white hover:text-primary-navy transition-all duration-300 backdrop-blur-md group text-[11px] md:text-[15px] uppercase tracking-widest whitespace-nowrap">
               <span className="md:inline">고객센터</span> 1833-6362
             </button>
+          </div>
+
+          {/* Mobile Scroll Indicator (Below Buttons) */}
+          <div className="flex flex-col items-center gap-4 mt-12 md:hidden">
+            <div className="w-[20px] h-[34px] border-2 border-white/30 rounded-full flex justify-center p-1">
+              <motion.div 
+                animate={{ 
+                  y: [0, 12, 0],
+                  opacity: [1, 0, 1]
+                }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="w-1 h-1 bg-white rounded-full"
+              />
+            </div>
+            <span className="text-[10px] text-white font-bold tracking-[0.3em] uppercase">
+              SCROLL DOWN
+            </span>
           </div>
         </motion.div>
       </motion.div>
 
-      {/* Left-side Vertical Scroll Indicator */}
-      <div className="absolute left-8 bottom-10 flex flex-col items-center gap-8 z-20">
+      {/* Desktop Left-side Vertical Scroll Indicator */}
+      <div className="absolute left-8 bottom-10 hidden md:flex flex-col items-center gap-8 z-20">
         <div className="flex flex-col items-center gap-4">
           <div className="w-[1px] h-20 bg-gradient-to-b from-transparent to-white/50"></div>
           <span className="text-[10px] text-white font-bold tracking-[0.3em] uppercase [writing-mode:vertical-lr] rotate-180">

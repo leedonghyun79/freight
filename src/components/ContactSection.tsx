@@ -58,8 +58,8 @@ export default function ContactSection() {
             <div className="absolute -top-20 -right-20 w-80 h-80 bg-primary-orange/10 rounded-full blur-3xl pointer-events-none"></div>
             
             <div className="relative z-10">
-              <span className="text-primary-orange font-bold text-sm tracking-widest uppercase mb-6 block">
-                CONTACT US
+              <span className="text-primary-orange text-xs font-black tracking-widest uppercase mb-[5px] md:mb-4 block">
+                INQUIRY
               </span>
               <h2 className="text-2xl lg:text-5xl font-outfit font-black mb-8 leading-tight tracking-tight">
                 고객 맞춤 <br />
@@ -78,7 +78,7 @@ export default function ContactSection() {
 
                 <div className="group">
                   <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-2 font-bold opacity-70">Email Inquiry</div>
-                  <div className="text-white text-xl lg:text-2xl font-black group-hover:text-primary-orange transition-colors">protex@protex.pro.kr</div>
+                  <div className="text-white text-xl lg:text-2xl font-black group-hover:text-primary-orange transition-colors">protexmove@gmail.com</div>
                 </div>
               </div>
 
@@ -92,10 +92,6 @@ export default function ContactSection() {
                     <span className="text-xs text-gray-300 leading-relaxed font-medium break-keep">경기도 평택시 고덕동 1234-5 프로젝트 타워 801호</span>
                   </div>
                   <div className="flex items-start gap-12">
-                     <div className="flex flex-col">
-                        <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Business No.</span>
-                        <span className="text-xs text-gray-300 font-medium whitespace-nowrap">123-45-67890</span>
-                     </div>
                      <div className="flex flex-col">
                         <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Representative</span>
                         <span className="text-xs text-gray-300 font-medium whitespace-nowrap">김태호</span>
@@ -271,26 +267,27 @@ export default function ContactSection() {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="bg-white rounded-3xl shadow-2xl w-full max-w-2xl max-h-[80vh] overflow-hidden relative z-10 flex flex-col"
+              className="bg-white rounded-2xl md:rounded-3xl shadow-2xl w-full max-w-2xl max-h-[90vh] md:max-h-[80vh] overflow-hidden relative z-10 flex flex-col mx-4"
             >
-              <div className="p-8 border-b border-gray-50 flex items-center justify-between">
-                <h3 className="text-xl font-black text-primary-navy">개인정보 처리방침</h3>
+              <div className="p-6 md:p-8 border-b border-gray-50 flex items-center justify-between">
+                <h3 className="text-lg md:text-xl font-black text-primary-navy">개인정보 처리방침</h3>
                 <button
                   onClick={() => setShowPrivacy(false)}
-                  className="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:bg-gray-50 transition-colors"
+                  className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:bg-gray-50 transition-colors"
                 >
-                  <X size={20} />
+                  <X size={18} />
                 </button>
               </div>
-              <div className="p-8 overflow-y-auto bg-gray-50/50">
-                <pre className="text-sm text-gray-600 leading-relaxed font-sans whitespace-pre-wrap break-keep">
-                  {PRIVACY_TEXT}
-                </pre>
+              <div className="p-6 md:p-8 overflow-y-auto bg-gray-50/50 flex-1">
+                <div 
+                  className="text-xs md:text-sm text-gray-600 leading-relaxed font-sans whitespace-pre-wrap break-keep"
+                  dangerouslySetInnerHTML={{ __html: PRIVACY_TEXT.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}
+                />
               </div>
-              <div className="p-8 border-t border-gray-50 text-center">
+              <div className="p-6 md:p-8 border-t border-gray-50 text-center">
                 <button
                   onClick={() => setShowPrivacy(false)}
-                  className="px-10 py-4 bg-primary-navy text-white font-black rounded-2xl hover:bg-black transition-all shadow-xl shadow-primary-navy/20"
+                  className="w-full md:w-auto px-10 py-4 bg-primary-navy text-white font-black rounded-xl md:rounded-2xl hover:bg-black transition-all shadow-xl shadow-primary-navy/20"
                 >
                   확인했습니다
                 </button>

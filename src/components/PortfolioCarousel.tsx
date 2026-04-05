@@ -80,9 +80,9 @@ export default function PortfolioCarousel() {
     <section id="portfolio" className="py-24 bg-white overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Standardized Section Header with Navigation */}
-        <div className="flex flex-row justify-between items-end mb-16">
+        <div className="flex flex-row justify-between items-end mb-10 md:mb-16">
           <div className="flex-1">
-            <span className="text-gray-400 font-bold text-xs md:text-sm tracking-widest uppercase mb-2 md:mb-4 block">
+            <span className="text-gray-400 font-bold text-xs md:text-sm tracking-widest uppercase mb-[5px] md:mb-4 block">
               ACTUAL CASES
             </span>
             <h2 className="text-2xl md:text-[36px] font-black text-primary-navy tracking-tight whitespace-nowrap">

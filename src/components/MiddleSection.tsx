@@ -37,8 +37,8 @@ export default function MiddleSection() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="text-center mb-16 max-w-4xl mx-auto">
-          <span className="text-gray-300 font-bold text-sm tracking-widest uppercase mb-4 block">
+        <div className="text-center mb-10 md:mb-16 max-w-4xl mx-auto">
+          <span className="text-gray-300 font-bold text-sm tracking-widest uppercase mb-[5px] md:mb-4 block">
             WHY PROTEX
           </span>
           <motion.h2
@@ -51,7 +51,7 @@ export default function MiddleSection() {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[15px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-[15px]">
           {items.map((item, idx) => (
             <motion.div
               key={item.title}
@@ -61,8 +61,8 @@ export default function MiddleSection() {
               transition={{ delay: idx * 0.1 }}
               className="group"
             >
-              <div className="border-l border-white/20 pl-8 h-full">
-                <h3 className="text-[18px] font-bold text-white mb-[15px] group-hover:text-primary-orange transition-colors min-h-[3.5rem] flex items-start break-keep">
+              <div className="border-l border-white/20 pl-8 h-full py-5 md:py-0">
+                <h3 className="text-[18px] font-bold text-white mb-2 group-hover:text-primary-orange transition-colors flex items-start break-keep">
                   {item.title}
                 </h3>
                 <p 

@@ -58,7 +58,7 @@ export default function ServiceSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="text-center mb-10 md:mb-16 px-6">
-          <span className="text-gray-400 font-bold text-sm tracking-widest uppercase mb-4 block">
+          <span className="text-gray-400 font-bold text-sm tracking-widest uppercase mb-[5px] md:mb-4 block">
             MAJOR FIELDS
           </span>
           <motion.h2
@@ -71,8 +71,8 @@ export default function ServiceSection() {
           </motion.h2>
         </div>
 
-        {/* Tabs (Navigation) - Moved Above Card */}
-        <div className="flex flex-wrap justify-center gap-x-4 md:gap-x-[65px] gap-y-3 mb-10">
+        {/* Desktop Tabs (Navigation) */}
+        <div className="hidden md:flex flex-wrap justify-center gap-x-[65px] gap-y-3 mb-10">
           {services.map((service, idx) => {
             const isActive = activeIdx === idx;
             return (
@@ -96,8 +96,8 @@ export default function ServiceSection() {
           })}
         </div>
 
-        {/* Main Content Card (Slide) */}
-        <div className="relative h-[240px] md:h-[600px] w-full bg-primary-navy rounded-[40px] overflow-hidden shadow-2xl">
+        {/* Desktop Main Content Card (Slide) */}
+        <div className="hidden md:block relative h-[600px] w-full bg-primary-navy rounded-[40px] overflow-hidden shadow-2xl">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIdx}
@@ -113,25 +113,58 @@ export default function ServiceSection() {
                 fill
                 className="object-cover opacity-60"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col items-center justify-center text-center px-6 md:px-20 text-white">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col items-center justify-center text-center px-20 text-white">
                 <motion.div
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <h3 className="text-2xl md:text-5xl font-black mb-4 md:mb-6 leading-tight">
+                  <h3 className="text-5xl font-black mb-6 leading-tight">
                     {services[activeIdx].title}
                   </h3>
-                  <p className="max-w-3xl mx-auto text-primary-orange text-[15px] md:text-2xl mb-4 md:mb-6 font-bold leading-relaxed break-keep">
+                  <p className="max-w-3xl mx-auto text-primary-orange text-2xl mb-6 font-bold leading-relaxed break-keep">
                     {services[activeIdx].description}
                   </p>
-                  <p className="max-w-3xl mx-auto text-gray-300 text-xs md:text-lg mb-0 md:leading-relaxed font-light opacity-90 break-keep line-clamp-3 md:line-clamp-none">
+                  <p className="max-w-3xl mx-auto text-gray-300 text-lg mb-0 leading-relaxed font-light opacity-90 break-keep">
                     {services[activeIdx].longDesc}
                   </p>
                 </motion.div>
               </div>
             </motion.div>
           </AnimatePresence>
+        </div>
+
+        {/* Mobile View: All Items as Cards */}
+        <div className="md:hidden flex flex-col gap-6">
+          {services.map((service, idx) => (
+            <motion.div
+              key={service.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="relative min-h-[300px] h-auto w-full bg-primary-navy rounded-[30px] overflow-hidden shadow-xl"
+            >
+              <Image
+                src={service.image}
+                alt={service.title}
+                fill
+                className="object-cover opacity-50"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/30 flex flex-col justify-end p-8 py-10 text-white">
+                <h3 className="text-[22px] font-black mb-2.5 text-primary-orange tracking-tight">
+                  {service.title}
+                </h3>
+                <p className="text-[15px] font-bold mb-4 leading-snug break-keep text-white/95">
+                  {service.description}
+                </p>
+                <div className="w-12 h-[1px] bg-white/20 mb-4" />
+                <p className="text-[13px] text-gray-400 font-medium leading-relaxed break-keep">
+                  {service.longDesc}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

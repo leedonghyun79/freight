@@ -43,12 +43,12 @@ export default function FloatingAction() {
               </span>
             </motion.a>
 
-            {/* Direct Call Button */}
+            {/* Direct Call Button (Mobile Only) */}
             <motion.a
               href="tel:1833-6362"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="w-14 h-14 bg-primary-navy rounded-full shadow-2xl flex items-center justify-center text-white group relative border border-white/10"
+              className="w-14 h-14 bg-primary-navy rounded-full shadow-2xl flex items-center justify-center text-white group relative border border-white/10 md:hidden"
             >
               <Phone size={24} />
               <span className="absolute right-16 top-1/2 -translate-y-1/2 bg-white px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none text-primary-navy">

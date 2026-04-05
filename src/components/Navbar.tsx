@@ -42,7 +42,10 @@ export default function Navbar() {
     >
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <button 
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
+          className="flex items-center"
+        >
           <div className="relative w-[160px] h-[50px]">
             <Image 
               src={isScrolled ? "/images/로고_c.png" : "/images/로고_w.png"} 
@@ -51,7 +54,7 @@ export default function Navbar() {
               className="object-contain transition-all duration-300"
             />
           </div>
-        </Link>
+        </button>
 
         <div className="hidden lg:flex items-center space-x-12">
           {navLinks.map((link) => {
