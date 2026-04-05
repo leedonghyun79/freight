@@ -5,21 +5,21 @@ import Image from "next/image";
 
 const items = [
   {
-    title: "10억 보험가입",
+    title: "적재물 파손 보장보험 10억 가입",
     description: "적재물 배상책임보험 10억 가입으로 사고 발생 시 완벽한 보상을 보장합니다.",
   },
   {
-    title: "25톤 네트워크",
-    description: "전국 무진동 특수차 25톤 네트워크를 통해 전국 어디든 신속한 배차가 가능합니다.",
+    title: "완벽한 항습(제습) 시스템",
+    description: "온도만으로 항습(제습)하던 방법이 아닌 실시간습도계(운행중 모니터링),제습전용장비,수출용방습제구비 무시동(정차)시에도 제습 및 운송 완료후 제습 데이터 로그 제공<br><span class='text-[13px] text-gray-500 mt-2 block'>(*실제 제주우주센터 장비납품시 적용중)</span>",
   },
   {
-    title: "특수 교육 이수",
-    description: "반도체, 의료장비 등 정밀 기기 취급에 대한 전문 기술 및 보안 교육을 이수 완료하였습니다.",
+    title: "무진동화물차주 네트워크",
+    description: "1톤, 5톤, 10톤이상 전국무진동특수차 차주와 직접배차공유로 가장 빠른 배차",
   },
   {
-    title: "전문 포장팀",
-    description: "문화재, 예술품 등 온도와 습도에 민감한 특수 화물을 위한 전담 포장 및 운송팀을 운영합니다.",
-  },
+    title: "제품안전포장 및 완충시스템",
+    description: "정전기 방지 포장 및 제품결박시 완충스펀지 포장결박으로 제품보호를 완료했습니다. 미술품 및 문화재 전문 포장팀운영",
+  }
 ];
 
 export default function MiddleSection() {
@@ -47,11 +47,11 @@ export default function MiddleSection() {
             viewport={{ once: true }}
             className="text-2xl md:text-[36px] font-outfit font-black text-white mb-8 tracking-tight"
           >
-            프로텍스를 <span className="text-primary-orange">선택해야 하는 이유</span>
+            <span>고가의 장비,<br />그 가치를 그대로 전합니다.</span>
           </motion.h2>
         </div>
- 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[15px]">
           {items.map((item, idx) => (
             <motion.div
               key={item.title}
@@ -62,12 +62,13 @@ export default function MiddleSection() {
               className="group"
             >
               <div className="border-l border-white/20 pl-8 h-full">
-                <h3 className="text-xl font-bold text-white mb-6 group-hover:text-primary-orange transition-colors">
+                <h3 className="text-[18px] font-bold text-white mb-[15px] group-hover:text-primary-orange transition-colors min-h-[3.5rem] flex items-start break-keep">
                   {item.title}
                 </h3>
-                <p className="text-gray-400 text-[15px] md:text-base leading-relaxed break-keep">
-                  {item.description}
-                </p>
+                <p 
+                  className="text-gray-400 text-[15px] leading-relaxed break-keep"
+                  dangerouslySetInnerHTML={{ __html: item.description }}
+                />
               </div>
             </motion.div>
           ))}

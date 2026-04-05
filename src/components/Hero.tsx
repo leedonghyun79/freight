@@ -1,8 +1,14 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { Shield, Truck, Thermometer, FileText } from "lucide-react";
+
+const images = [
+  "/images/메인트럭사진.jpg",
+  "/images/메인대표사진1.jpg",
+];
 
 const stats = [
   { icon: Shield, label: "적재물 보험", value: "10억+" },
@@ -11,68 +17,95 @@ const stats = [
 ];
 
 export default function Hero() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const { scrollY } = useScroll();
   const scale = useTransform(scrollY, [0, 800], [1, 1.1]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section
       className="sticky top-0 h-screen flex items-center justify-center overflow-hidden bg-primary-navy z-0"
     >
-      {/* Background Image with Dynamic Overlay */}
-      <motion.div style={{ scale }} className="absolute inset-0 z-0">
-        <Image
-          src="/images/메인트럭사진.jpg"
-          alt="PROTEX Professional Special Cargo Truck"
-          fill
-          priority
-          className="object-cover"
-        />
+      {/* Background Image Carousel with Dynamic Overlay */}
+      <motion.div style={{ scale }} className="absolute inset-0 z-0 bg-primary-navy">
+        <AnimatePresence mode="popLayout">
+          <motion.div
+            key={currentImageIndex}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 2.5, ease: "easeInOut" }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={images[currentImageIndex]}
+              alt="PROTEX Professional Special Cargo Transport"
+              fill
+              priority
+              className="object-cover object-right"
+            />
+          </motion.div>
+        </AnimatePresence>
+        
         {/* Adjusted Gradients to Reveal the Truck Brand (MAN Logo Area) while protecting text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-black/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-primary-navy/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-black/80 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-primary-navy/80 z-10"></div>
       </motion.div>
 
-      <motion.div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 text-center">
+      <motion.div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full flex justify-end">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
+          className="flex flex-col items-start text-left max-w-4xl"
         >
           <span className="text-primary-orange text-sm font-black tracking-[0.4em] uppercase mb-6 block drop-shadow-md">
             SPECIAL CARGO TRANSPORT
           </span>
 
-          <h1 className="text-[30px] md:text-[60px] font-outfit font-black text-white leading-[1.2] mb-6 md:mb-8 tracking-tighter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+          <h1 className="text-[32px] md:text-[64px] font-outfit font-black text-white leading-[1.1] mb-6 md:mb-8 tracking-tighter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
             프로텍스가 제안하는<br />
-            <span className="text-primary-orange">운송의 새로운 기준</span>
+            <span className="text-primary-orange text-[36px] md:text-[72px]">운송의 새로운 기준</span>
           </h1>
 
-          <p className="text-[15px] md:text-[22px] text-gray-100 font-medium mb-10 md:mb-12 max-w-4xl mx-auto leading-relaxed drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)] opacity-90 break-keep">
-            고가의 반도체, 의료장비, 고부가가치 화물을 가치 그대로 안전하게 전합니다.<br className="hidden md:block" />
+          <p className="text-[16px] md:text-[20px] text-gray-100 font-medium mb-10 md:mb-12 max-w-2xl leading-relaxed drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)] opacity-90 break-keep">
+            고가의 반도체, 의료장비, 고부가가치 화물을 가치 그대로 안전하게 전합니다.<br />
             프로텍스만의 전담팀과 정밀 관제 시스템으로 처음부터 끝까지 책임집니다.
           </p>
 
-          <div className="flex flex-row justify-center items-center gap-3 md:gap-4 max-w-[400px] mx-auto w-full">
+          <div className="flex flex-row justify-start items-center gap-3 md:gap-4 w-full">
             <a 
               href="#contact" 
-              className="flex-1 py-4 md:py-5 bg-primary-orange text-white font-bold rounded-full hover:bg-orange-600 transition-all duration-300 shadow-2xl shadow-primary-orange/40 uppercase tracking-widest text-[13px] md:text-[15px] flex items-center justify-center cursor-pointer whitespace-nowrap px-4"
+              className="px-8 py-4 md:py-5 bg-primary-orange text-white font-bold rounded-full hover:bg-orange-600 transition-all duration-300 shadow-2xl shadow-primary-orange/40 uppercase tracking-widest text-[13px] md:text-[15px] flex items-center justify-center cursor-pointer whitespace-nowrap"
             >
               빠른 견적 문의
             </a>
-            <button className="flex-1 py-4 md:py-5 border-2 border-white/50 text-white font-bold rounded-full hover:bg-white hover:text-primary-navy transition-all duration-300 backdrop-blur-md group text-[13px] md:text-[15px] uppercase tracking-widest whitespace-nowrap px-4">
+            <button className="px-8 py-4 md:py-5 border-2 border-white/50 text-white font-bold rounded-full hover:bg-white hover:text-primary-navy transition-all duration-300 backdrop-blur-md group text-[13px] md:text-[15px] uppercase tracking-widest whitespace-nowrap">
               <span className="hidden md:inline">고객센터</span> 1833-6362
             </button>
           </div>
         </motion.div>
       </motion.div>
 
-      {/* Modern Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center group cursor-pointer">
-        <span className="text-[10px] text-white/50 font-bold tracking-[0.3em] mb-4 uppercase group-hover:text-primary-orange transition-colors">DISCOVER MORE</span>
-        <div className="w-[26px] h-[44px] border-2 border-white/30 rounded-full flex justify-center p-1.5 transition-colors group-hover:border-primary-orange">
+      {/* Left-side Vertical Scroll Indicator */}
+      <div className="absolute left-8 bottom-10 flex flex-col items-center gap-8 z-20">
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-[1px] h-20 bg-gradient-to-b from-transparent to-white/50"></div>
+          <span className="text-[10px] text-white font-bold tracking-[0.3em] uppercase [writing-mode:vertical-lr] rotate-180">
+            SCROLL DOWN
+          </span>
+        </div>
+        
+        <div className="w-[20px] h-[34px] border-2 border-white/30 rounded-full flex justify-center p-1 group">
            <motion.div 
               animate={{ 
-                y: [0, 16, 0],
+                y: [0, 12, 0],
                 opacity: [1, 0, 1]
               }}
               transition={{ 
@@ -80,7 +113,7 @@ export default function Hero() {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="w-1.5 h-1.5 bg-primary-orange rounded-full"
+              className="w-1 h-1 bg-white rounded-full"
            />
         </div>
       </div>
