@@ -221,7 +221,7 @@ export default function ContactSection() {
                         <label className="text-[11px] font-black text-primary-navy uppercase tracking-wider">운송 품목</label>
                         <input 
                            type="text" 
-                           placeholder="예: 가전제품, 의류, 식품" 
+                           placeholder="운송 품목 입력" 
                            className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-[13px] md:text-sm"
                            value={formData.item}
                            onChange={(e) => setFormData({...formData, item: e.target.value})}
@@ -231,7 +231,7 @@ export default function ContactSection() {
                         <label className="text-[11px] font-black text-primary-navy uppercase tracking-wider">수량</label>
                         <input 
                            type="text" 
-                           placeholder="예: 3박스, 1톤" 
+                           placeholder="수량 입력" 
                            className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-[13px] md:text-sm"
                            value={formData.quantity}
                            onChange={(e) => setFormData({...formData, quantity: e.target.value})}
