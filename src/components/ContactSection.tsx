@@ -38,14 +38,55 @@ export default function ContactSection() {
     startLoc: "",
     endLoc: "",
     item: "",
+    quantity: "",
     message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // 휴대폰 번호 자동 하이픈 및 숫자만 추출 함수
+  const formatPhoneNumber = (value: string) => {
+    const numbers = value.replace(/[^\d]/g, ""); // 숫자만 남기기
+    if (numbers.length <= 3) return numbers;
+    if (numbers.length <= 7) return `${numbers.slice(0, 3)}-${numbers.slice(3)}`;
+    return `${numbers.slice(0, 3)}-${numbers.slice(3, 7)}-${numbers.slice(7, 11)}`;
+  };
+
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    // In real app, send email or push to DB here
+
+    // 휴대폰 번호 최종 확인 (하이픈 제외 10~11자리)
+    const phoneDigits = formData.phone.replace(/[^\d]/g, "");
+    if (phoneDigits.length < 10 || phoneDigits.length > 11) {
+      alert("올바른 휴대폰 번호 형식을 입력해 주세요. (예: 010-1234-5678)");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setFormData({ name: '', phone: '', startLoc: '', endLoc: '', item: '', quantity: '', message: '' });
+        setIsSubmitted(true);
+
+      } else {
+        alert(result.error || '견적 신청 중 오류가 발생했습니다. 잠시 후 고객센터로 문의 부탁드립니다.');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('연결 오류가 발생했습니다. 네트워크 상태를 확인 후 다시 시도해 주세요.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -144,9 +185,10 @@ export default function ContactSection() {
                            type="tel" 
                            required 
                            placeholder="010-0000-0000" 
+                           maxLength={13}
                            className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-sm"
                            value={formData.phone}
-                           onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                           onChange={(e) => setFormData({...formData, phone: formatPhoneNumber(e.target.value)})}
                         />
                       </div>
                     </div>
@@ -174,15 +216,27 @@ export default function ContactSection() {
                       </div>
                     </div>
 
-                    <div className="space-y-2">
-                      <label className="text-[11px] font-black text-primary-navy uppercase tracking-wider">운송 품목 및 수량</label>
-                      <input 
-                         type="text" 
-                         placeholder="배송 화물의 상세 정보" 
-                         className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-[13px] md:text-sm"
-                         value={formData.item}
-                         onChange={(e) => setFormData({...formData, item: e.target.value})}
-                      />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div className="space-y-2">
+                        <label className="text-[11px] font-black text-primary-navy uppercase tracking-wider">운송 품목</label>
+                        <input 
+                           type="text" 
+                           placeholder="예: 가전제품, 의류, 식품" 
+                           className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-[13px] md:text-sm"
+                           value={formData.item}
+                           onChange={(e) => setFormData({...formData, item: e.target.value})}
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-[11px] font-black text-primary-navy uppercase tracking-wider">수량</label>
+                        <input 
+                           type="text" 
+                           placeholder="예: 3박스, 1톤" 
+                           className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-[13px] md:text-sm"
+                           value={formData.quantity}
+                           onChange={(e) => setFormData({...formData, quantity: e.target.value})}
+                        />
+                      </div>
                     </div>
 
                     <div className="space-y-2">
@@ -216,10 +270,11 @@ export default function ContactSection() {
 
                       <button 
                         type="submit" 
-                        className="px-10 py-5 bg-primary-navy text-white rounded-2xl font-black flex items-center justify-center group hover:bg-black transition-all shadow-xl shadow-primary-navy/20"
+                        disabled={isSubmitting}
+                        className={`px-10 py-5 ${isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-navy hover:bg-black'} text-white rounded-2xl font-black flex items-center justify-center group transition-all shadow-xl shadow-primary-navy/20`}
                       >
-                        신청하기
-                        <ChevronRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                        {isSubmitting ? '전송 중...' : '신청하기'}
+                        <ChevronRight size={20} className={`ml-2 ${!isSubmitting && 'group-hover:translate-x-1'} transition-transform`} />
                       </button>
                     </div>
                   </form>
@@ -239,12 +294,6 @@ export default function ContactSection() {
                     접수해주신 내용은 담당자가 즉시 확인 중입니다. <br />
                     빠른 시간 내에 전문 상담사가 연락을 드립니다.
                   </p>
-                  <button 
-                     onClick={() => setIsSubmitted(false)}
-                     className="px-8 py-3 bg-gray-100 text-gray-500 font-black rounded-xl hover:bg-gray-200 transition-colors"
-                  >
-                     다른 문의 접수하기
-                  </button>
                 </motion.div>
               )}
             </AnimatePresence>
