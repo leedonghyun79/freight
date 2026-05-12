@@ -48,13 +48,12 @@ export default function Hero() {
               alt="PROTEX Professional Special Cargo Transport"
               fill
               priority
-              className={`object-cover object-center transition-all duration-700 ${
-                currentImageIndex === 1 ? "md:object-left" : "md:object-right"
-              }`}
+              className={`object-cover object-center transition-all duration-700 ${currentImageIndex === 1 ? "md:object-left" : "md:object-right"
+                }`}
             />
           </motion.div>
         </AnimatePresence>
-        
+
         {/* Adjusted Gradients to Reveal the Truck Brand (MAN Logo Area) while protecting text legibility */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-black/80 z-10 md:hidden"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-black/80 z-10 hidden md:block"></div>
@@ -84,27 +83,33 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-row justify-center md:justify-start items-center gap-3 md:gap-4 w-full">
-            <a 
-              href="https://pf.kakao.com/_qMeuX/chat" 
+            <a
+              href="https://pf.kakao.com/_qMeuX/chat"
               target="_blank"
               className="flex-1 md:flex-none px-4 md:px-10 py-3.5 md:py-5 bg-primary-orange text-white font-bold rounded-full hover:bg-orange-600 transition-all duration-300 shadow-2xl shadow-primary-orange/40 uppercase tracking-widest text-[11px] md:text-[15px] flex items-center justify-center cursor-pointer whitespace-nowrap"
             >
               빠른 견적 문의
             </a>
-            <button className="flex-1 md:flex-none px-4 md:px-10 py-3.5 md:py-5 border-2 border-white/50 text-white font-bold rounded-full hover:bg-white hover:text-primary-navy transition-all duration-300 backdrop-blur-md group text-[11px] md:text-[15px] uppercase tracking-widest whitespace-nowrap">
-              <span className="md:inline">고객센터</span> 1833-6362
-            </button>
+            <a
+              href="tel:1833-6362"
+              className="flex-1 md:flex-none px-4 md:px-0 py-3 md:py-0 border-2 md:border-none border-white/50 text-white rounded-full md:rounded-none transition-all duration-300 backdrop-blur-md md:backdrop-blur-none uppercase tracking-widest whitespace-nowrap md:cursor-default md:pointer-events-none max-md:hover:bg-white max-md:hover:text-primary-navy flex items-center justify-center md:ml-8"
+            >
+              <div className="flex flex-col items-center md:items-start leading-tight">
+                <span className="text-[9px] md:text-[12px] text-white/70 font-medium uppercase tracking-wider mb-0.5">고객센터</span>
+                <span className="text-[13px] md:text-[25px] font-bold">1833-6362</span>
+              </div>
+            </a>
           </div>
 
           {/* Mobile Scroll Indicator (Below Buttons) */}
           <div className="flex flex-col items-center gap-4 mt-12 md:hidden">
             <div className="w-[20px] h-[34px] border-2 border-white/30 rounded-full flex justify-center p-1">
-              <motion.div 
-                animate={{ 
+              <motion.div
+                animate={{
                   y: [0, 12, 0],
                   opacity: [1, 0, 1]
                 }}
-                transition={{ 
+                transition={{
                   duration: 2,
                   repeat: Infinity,
                   ease: "easeInOut"
@@ -127,20 +132,20 @@ export default function Hero() {
             SCROLL DOWN
           </span>
         </div>
-        
+
         <div className="w-[20px] h-[34px] border-2 border-white/30 rounded-full flex justify-center p-1 group">
-           <motion.div 
-              animate={{ 
-                y: [0, 12, 0],
-                opacity: [1, 0, 1]
-              }}
-              transition={{ 
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="w-1 h-1 bg-white rounded-full"
-           />
+          <motion.div
+            animate={{
+              y: [0, 12, 0],
+              opacity: [1, 0, 1]
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="w-1 h-1 bg-white rounded-full"
+          />
         </div>
       </div>
     </section>
