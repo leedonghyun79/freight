@@ -67,7 +67,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-24 mb-16">
           <div className="lg:w-1/3">
-            <button 
+            <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="mb-8 block"
             >
@@ -80,7 +80,7 @@ export default function Footer() {
               />
             </button>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm mb-8 break-keep">
-              프로펙스 특수운송은 반도체, 의료기기, 전산장비 등 고가의 정밀 자산을 현지 기술 인력과 실시간 관제 시스템을 통해 가장 안전하게 운송합니다.
+              프로텍스 특수운송은 반도체, 의료기기, 전산장비 등 고가의 정밀 자산을 현지 기술 인력과 실시간 관제 시스템을 통해 가장 안전하게 운송합니다.
             </p>
           </div>
 
