@@ -78,8 +78,8 @@ export default function Hero() {
           </h1>
 
           <p className="text-[14px] md:text-[20px] text-gray-100 font-medium mb-10 md:mb-12 max-w-2xl leading-relaxed drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)] opacity-90 break-keep">
-            고가의 반도체, 의료장비, 고부가가치 화물을 가치 그대로 안전하게 전합니다.<br className="hidden md:block" />
-            프로텍스만의 전담팀과 정밀 관제 시스템으로 처음부터 끝까지 책임집니다.
+            고가의 반도체, 의료장비, 고부가가치 화물을<br className="md:hidden" /> 가치 그대로 안전하게 전합니다.<br />
+            프로텍스만의 전담팀과 정밀 관제 시스템으로<br className="md:hidden" /> 처음부터 끝까지 책임집니다.
           </p>
 
           <div className="flex flex-row justify-center md:justify-start items-center gap-3 md:gap-4 w-full">
