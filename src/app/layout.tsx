@@ -67,7 +67,7 @@ export default function RootLayout({
       className={`${inter.variable} ${outfit.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col font-inter" suppressHydrationWarning>
+      <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -94,6 +94,8 @@ export default function RootLayout({
             ])
           }}
         />
+      </head>
+      <body className="min-h-full flex flex-col font-inter" suppressHydrationWarning>
         {children}
       </body>
     </html>
