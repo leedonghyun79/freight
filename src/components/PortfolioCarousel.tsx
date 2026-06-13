@@ -147,14 +147,14 @@ export default function PortfolioCarousel() {
                   </div>
                   {/* Content Area */}
                   <div className="p-5 flex-grow border-t border-gray-50">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">
+                    <h3 className="text-[20px] font-bold text-gray-900 mb-2">
                       {item.title}
                     </h3>
                     <div className="text-sm text-gray-400 font-medium">
                       #{item.category.replace(/\s+/g, "")}
                     </div>
                     {/* Added description subtly for context */}
-                    <p className="mt-3 text-xs text-gray-400 leading-relaxed">
+                    <p className="mt-3 text-[15px] text-gray-400 leading-relaxed">
                       {item.description}
                     </p>
                   </div>
