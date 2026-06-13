@@ -114,12 +114,24 @@ export default function ContactSection() {
               <div className="space-y-12">
                 <div className="group">
                   <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-2 font-bold opacity-70">Company Representative</div>
-                  <div className="text-white text-4xl lg:text-5xl font-black tracking-tighter group-hover:text-primary-orange transition-colors">1833-6362</div>
+                  <a
+                    href="tel:18336362"
+                    className="text-white text-4xl lg:text-5xl font-black tracking-tighter group-hover:text-primary-orange transition-colors flex items-center gap-3 cursor-pointer"
+                  >
+                    1833-6362
+                    <PhoneCall size={24} className="opacity-40 group-hover:opacity-100 transition-opacity" />
+                  </a>
                 </div>
 
                 <div className="group">
                   <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-2 font-bold opacity-70">Email Inquiry</div>
-                  <div className="text-white text-xl lg:text-2xl font-black group-hover:text-primary-orange transition-colors">protexmove@gmail.com</div>
+                  <a
+                    href="mailto:protexmove@gmail.com"
+                    className="text-white text-xl lg:text-2xl font-black group-hover:text-primary-orange transition-colors flex items-center gap-3 cursor-pointer break-all"
+                  >
+                    protexmove@gmail.com
+                    <Mail size={20} className="opacity-40 group-hover:opacity-100 transition-opacity shrink-0" />
+                  </a>
                 </div>
               </div>
 
