@@ -71,6 +71,14 @@ const cases = [
     image: "/images/원자력발전소내실험장비.jpg",
     specs: ["Real-time CCTV", "Climate Log"],
   },
+  {
+    id: 9,
+    title: "1톤무진동 그림/미술품/문화재 포장 및 운송",
+    description: "1톤 무진동차량 갤러리 그림을 포장하여 안전운송 및 갤러리 설치작업까지 완료!",
+    category: "Art Transport",
+    image: "/images/1톤무진동_그림_미술품.png",
+    specs: ["Vibration Free", "Art Packing", "Installation"],
+  },
 ];
 
 export default function PortfolioCarousel() {
@@ -127,7 +135,7 @@ export default function PortfolioCarousel() {
           >
             {cases.map((item) => (
               <SwiperSlide key={item.id} className="!w-[320px]">
-                <div className="bg-white rounded-lg overflow-hidden border border-gray-100 transition-all hover:shadow-xl group/card h-full flex flex-col">
+                <div className="bg-white rounded-lg overflow-hidden border border-gray-100 transition-all hover:shadow-xl group/card h-[408px] flex flex-col">
                   {/* Image Container */}
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <Image
@@ -139,14 +147,14 @@ export default function PortfolioCarousel() {
                   </div>
                   {/* Content Area */}
                   <div className="p-5 flex-grow border-t border-gray-50">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 truncate">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">
                       {item.title}
                     </h3>
                     <div className="text-sm text-gray-400 font-medium">
                       #{item.category.replace(/\s+/g, "")}
                     </div>
                     {/* Added description subtly for context */}
-                    <p className="mt-3 text-xs text-gray-400 line-clamp-2 leading-relaxed opacity-0 group-hover/card:opacity-100 transition-opacity">
+                    <p className="mt-3 text-xs text-gray-400 leading-relaxed">
                       {item.description}
                     </p>
                   </div>

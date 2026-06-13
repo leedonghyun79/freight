@@ -68,6 +68,20 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        {/* 네이버 애널리틱스 */}
+        <script type="text/javascript" src="//wcs.pstatic.net/wcslog.js" async />
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+              if(!wcs_add) var wcs_add = {};
+              wcs_add["wa"] = "a8831f54e53660";
+              if(window.wcs) {
+                wcs_do();
+              }
+            `,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
