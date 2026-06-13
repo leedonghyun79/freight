@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, Phone } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
@@ -31,6 +30,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const isMobile = window.innerWidth < 1024;
+    const scrollTarget = (isMobile && href === "#contact") ? "#contact-form" : href;
+    const el = document.querySelector(scrollTarget);
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+  };
+
   return (
     <nav
       className={cn(
@@ -42,36 +52,40 @@ export default function Navbar() {
     >
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12 flex justify-between items-center">
         {/* Logo */}
-        <button 
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
-          className="flex items-center"
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="flex items-center cursor-pointer"
         >
           <div className="relative w-[160px] h-[50px]">
-            <Image 
-              src={isScrolled ? "/images/로고_c.png" : "/images/로고_w.png"} 
-              alt="PROTEX Logo" 
+            <Image
+              src={isScrolled ? "/images/로고_c.png" : "/images/로고_w.png"}
+              alt="PROTEX Logo"
               fill
               className="object-contain transition-all duration-300"
             />
           </div>
         </button>
 
+        {/* Desktop Nav */}
         <div className="hidden lg:flex items-center space-x-12">
           {navLinks.map((link) => {
             const isContact = link.name === "견적 문의";
             return (
-              <Link
+              <a
                 key={link.name}
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className={cn(
-                  "text-[13px] font-bold transition-colors hover:text-primary-orange uppercase tracking-wider",
+                  "text-[13px] font-bold transition-colors hover:text-primary-orange uppercase tracking-wider cursor-pointer",
                   isContact
                     ? "text-primary-orange"
-                    : (isScrolled ? "text-primary-navy" : "text-white/90")
+                    : isScrolled
+                    ? "text-primary-navy"
+                    : "text-white/90"
                 )}
               >
                 {link.name}
-              </Link>
+              </a>
             );
           })}
         </div>
@@ -96,8 +110,7 @@ export default function Navbar() {
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        {/* Close Button in Overlay */}
-        <button 
+        <button
           onClick={() => setIsMobileMenuOpen(false)}
           className="absolute top-8 right-8 p-2 text-white/70 hover:text-white transition-colors"
         >
@@ -107,19 +120,25 @@ export default function Navbar() {
         {navLinks.map((link) => {
           const isContact = link.name === "견적 문의";
           return (
-            <Link
+            <a
               key={link.name}
               href={link.href}
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => {
+                handleNavClick(e, link.href);
+                setIsMobileMenuOpen(false);
+              }}
               className={cn(
-                "text-2xl font-bold transition-colors",
-                isContact ? "text-primary-orange" : "text-white hover:text-primary-orange"
+                "text-2xl font-bold transition-colors cursor-pointer",
+                isContact
+                  ? "text-primary-orange"
+                  : "text-white hover:text-primary-orange"
               )}
             >
               {link.name}
-            </Link>
+            </a>
           );
         })}
+
         <div className="absolute bottom-10 flex items-center text-white/60 space-x-2">
           <Phone size={18} />
           <span>1833-6362</span>
