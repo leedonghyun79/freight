@@ -150,9 +150,6 @@ export default function PortfolioCarousel() {
                     <h3 className="text-[20px] font-bold text-gray-900 mb-2">
                       {item.title}
                     </h3>
-                    <div className="text-sm text-gray-400 font-medium">
-                      #{item.category.replace(/\s+/g, "")}
-                    </div>
                     {/* Added description subtly for context */}
                     <p className="mt-3 text-[15px] text-gray-400 leading-relaxed">
                       {item.description}
