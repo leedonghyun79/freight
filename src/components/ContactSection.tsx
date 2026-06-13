@@ -1,11 +1,11 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  PhoneCall, 
-  Mail, 
-  Smartphone, 
-  ChevronRight, 
+import {
+  PhoneCall,
+  Mail,
+  Smartphone,
+  ChevronRight,
   CheckCheck,
   X
 } from "lucide-react";
@@ -97,7 +97,7 @@ export default function ContactSection() {
           <div className="lg:w-5/12 bg-primary-navy p-[35px] relative overflow-hidden flex flex-col justify-between text-white">
             {/* Visual Background Accent */}
             <div className="absolute -top-20 -right-20 w-80 h-80 bg-primary-orange/10 rounded-full blur-3xl pointer-events-none"></div>
-            
+
             <div className="relative z-10">
               <span className="text-primary-orange text-xs font-black tracking-widest uppercase mb-[5px] md:mb-4 block">
                 INQUIRY
@@ -110,7 +110,7 @@ export default function ContactSection() {
                 365일 24시간 실시간 관제 시스템 가동. <br />
                 지금 바로 전문가와 상담하세요.
               </p>
-              
+
               <div className="space-y-12">
                 <div className="group">
                   <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-2 font-bold opacity-70">Company Representative</div>
@@ -127,22 +127,22 @@ export default function ContactSection() {
 
             {/* Business Details (Enhanced Density) */}
             <div className="relative z-10 pt-8 border-t border-white/10 mt-12 grid grid-cols-1 gap-6">
-               <div className="space-y-6">
+              <div className="space-y-6">
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Office Address</span>
+                  <span className="text-xs text-gray-300 leading-relaxed font-medium break-keep">경기도 평택시 고덕동 1234-5 프로젝트 타워 801호</span>
+                </div>
+                <div className="flex items-start gap-12">
                   <div className="flex flex-col">
-                    <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Office Address</span>
-                    <span className="text-xs text-gray-300 leading-relaxed font-medium break-keep">경기도 평택시 고덕동 1234-5 프로젝트 타워 801호</span>
+                    <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Representative</span>
+                    <span className="text-xs text-gray-300 font-medium whitespace-nowrap">김태호</span>
                   </div>
-                  <div className="flex items-start gap-12">
-                     <div className="flex flex-col">
-                        <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Representative</span>
-                        <span className="text-xs text-gray-300 font-medium whitespace-nowrap">김태호</span>
-                     </div>
-                  </div>
-               </div>
-               <div className="flex items-center space-x-4">
-                  <div className="w-2 h-2 rounded-full bg-primary-orange animate-pulse"></div>
-                  <span className="text-[10px] text-gray-500 font-bold uppercase tracking-widest leading-none">Available 24/7 National Wide Support</span>
-               </div>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <div className="w-2 h-2 rounded-full bg-primary-orange animate-pulse"></div>
+                <span className="text-[10px] text-gray-500 font-bold uppercase tracking-widest leading-none">Available 24/7 National Wide Support</span>
+              </div>
             </div>
           </div>
 
@@ -151,102 +151,102 @@ export default function ContactSection() {
             <AnimatePresence mode="wait">
               {!isSubmitted ? (
                 <motion.div
-                   key="form"
-                   initial={{ opacity: 0, x: 20 }}
-                   animate={{ opacity: 1, x: 0 }}
-                   exit={{ opacity: 0, x: -20 }}
+                  key="form"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
                 >
                   <div className="mb-12">
-                    <h3 className="text-2xl font-black text-primary-navy mb-3">익스프레스 견적 신청</h3>
+                    <h3 className="text-2xl font-black text-primary-navy mb-3">온라인 견적 문의</h3>
                     <p className="text-gray-400 text-[13px] font-medium">필수 정보(*)를 입력하시면 30분 이내에 답변 드립니다.</p>
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="space-y-2 group">
-                        <label className="text-[11px] font-black text-primary-navy flex items-center uppercase tracking-wider">
+                        <label className="text-[15px] font-bold text-primary-navy flex items-center">
                           성함 / 업체명 <span className="text-primary-orange ml-1">*</span>
                         </label>
-                        <input 
-                           type="text" 
-                           required 
-                           autoComplete="off"
-                           placeholder="담당자명 또는 회사명을 입력하세요" 
-                           className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-sm"
-                           value={formData.name}
-                           onChange={(e) => setFormData({...formData, name: e.target.value})}
+                        <input
+                          type="text"
+                          required
+                          autoComplete="off"
+                          placeholder="담당자명 또는 회사명을 입력하세요"
+                          className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-sm"
+                          value={formData.name}
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         />
                       </div>
                       <div className="space-y-2 group">
-                        <label className="text-[11px] font-black text-primary-navy flex items-center uppercase tracking-wider">
+                        <label className="text-[15px] font-bold text-primary-navy flex items-center">
                           연락처 <span className="text-primary-orange ml-1">*</span>
                         </label>
-                        <input 
-                           type="tel" 
-                           required 
-                           placeholder="010-0000-0000" 
-                           maxLength={13}
-                           className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-sm"
-                           value={formData.phone}
-                           onChange={(e) => setFormData({...formData, phone: formatPhoneNumber(e.target.value)})}
+                        <input
+                          type="tel"
+                          required
+                          placeholder="010-0000-0000"
+                          maxLength={13}
+                          className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-sm"
+                          value={formData.phone}
+                          onChange={(e) => setFormData({ ...formData, phone: formatPhoneNumber(e.target.value) })}
                         />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="space-y-2">
-                        <label className="text-[11px] font-black text-primary-navy uppercase tracking-wider">상차지 (출발지)</label>
-                        <input 
-                           type="text" 
-                           placeholder="지역명 또는 상세주소" 
-                           className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-sm"
-                           value={formData.startLoc}
-                           onChange={(e) => setFormData({...formData, startLoc: e.target.value})}
+                        <label className="text-[15px] font-bold text-primary-navy">상차지 (출발지)</label>
+                        <input
+                          type="text"
+                          placeholder="지역명 또는 상세주소"
+                          className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-sm"
+                          value={formData.startLoc}
+                          onChange={(e) => setFormData({ ...formData, startLoc: e.target.value })}
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-[11px] font-black text-primary-navy uppercase tracking-wider">하차지 (도착지)</label>
-                        <input 
-                           type="text" 
-                           placeholder="지역명 또는 상세주소" 
-                           className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-sm"
-                           value={formData.endLoc}
-                           onChange={(e) => setFormData({...formData, endLoc: e.target.value})}
+                        <label className="text-[15px] font-bold text-primary-navy">하차지 (도착지)</label>
+                        <input
+                          type="text"
+                          placeholder="지역명 또는 상세주소"
+                          className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-sm"
+                          value={formData.endLoc}
+                          onChange={(e) => setFormData({ ...formData, endLoc: e.target.value })}
                         />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="space-y-2">
-                        <label className="text-[11px] font-black text-primary-navy uppercase tracking-wider">운송 품목</label>
-                        <input 
-                           type="text" 
-                           placeholder="운송 품목 입력" 
-                           className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-[13px] md:text-sm"
-                           value={formData.item}
-                           onChange={(e) => setFormData({...formData, item: e.target.value})}
+                        <label className="text-[15px] font-bold text-primary-navy">운송 품목</label>
+                        <input
+                          type="text"
+                          placeholder="운송 품목 입력"
+                          className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-[13px] md:text-sm"
+                          value={formData.item}
+                          onChange={(e) => setFormData({ ...formData, item: e.target.value })}
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-[11px] font-black text-primary-navy uppercase tracking-wider">수량</label>
-                        <input 
-                           type="text" 
-                           placeholder="수량 입력" 
-                           className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-[13px] md:text-sm"
-                           value={formData.quantity}
-                           onChange={(e) => setFormData({...formData, quantity: e.target.value})}
+                        <label className="text-[15px] font-bold text-primary-navy">수량</label>
+                        <input
+                          type="text"
+                          placeholder="수량 입력"
+                          className="w-full bg-gray-50 border-b-2 border-gray-100 h-10 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold placeholder:text-gray-300 placeholder:font-normal text-[13px] md:text-sm"
+                          value={formData.quantity}
+                          onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
                         />
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-xs font-black text-primary-navy">상세 문의 내용</label>
-                      <textarea 
+                      <label className="text-[15px] font-bold text-primary-navy">상세 문의 내용</label>
+                      <textarea
                         rows={2}
-                        placeholder="기타요청 및 특이사항 작성" 
+                        placeholder="기타요청 및 특이사항 작성"
                         className="w-full bg-gray-50 border-b-2 border-gray-100 py-4 px-1 focus:outline-none focus:border-primary-orange transition-all text-primary-navy font-bold resize-none placeholder:text-gray-300 placeholder:font-normal text-[13px] md:text-sm"
                         value={formData.message}
-                        onChange={(e) => setFormData({...formData, message: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       />
                     </div>
 
@@ -259,8 +259,8 @@ export default function ContactSection() {
                           </div>
                         </div>
                         <span className="text-[13px] font-bold text-gray-500 group-hover:text-primary-navy transition-colors tracking-tight leading-none">개인정보 수집 및 이용 동의</span>
-                        <button 
-                          type="button" 
+                        <button
+                          type="button"
                           onClick={() => setShowPrivacy(true)}
                           className="text-[11px] font-bold text-gray-400 border-b border-gray-200 hover:text-primary-orange hover:border-primary-orange transition-all ml-2 h-4 leading-none"
                         >
@@ -268,8 +268,8 @@ export default function ContactSection() {
                         </button>
                       </label>
 
-                      <button 
-                        type="submit" 
+                      <button
+                        type="submit"
                         disabled={isSubmitting}
                         className={`px-10 py-5 ${isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-navy hover:bg-black'} text-white rounded-2xl font-black flex items-center justify-center group transition-all shadow-xl shadow-primary-navy/20`}
                       >
@@ -281,10 +281,10 @@ export default function ContactSection() {
                 </motion.div>
               ) : (
                 <motion.div
-                   key="success"
-                   initial={{ opacity: 0, scale: 0.9 }}
-                   animate={{ opacity: 1, scale: 1 }}
-                   className="h-full flex flex-col items-center justify-center text-center space-y-6 py-20"
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="h-full flex flex-col items-center justify-center text-center space-y-6 py-20"
                 >
                   <div className="w-24 h-24 rounded-full bg-blue-100 flex items-center justify-center text-primary-navy mb-6">
                     <CheckCheck size={48} />
@@ -328,7 +328,7 @@ export default function ContactSection() {
                 </button>
               </div>
               <div className="p-6 md:p-8 overflow-y-auto bg-gray-50/50 flex-1">
-                <div 
+                <div
                   className="text-xs md:text-sm text-gray-600 leading-relaxed font-sans whitespace-pre-wrap break-keep"
                   dangerouslySetInnerHTML={{ __html: PRIVACY_TEXT.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}
                 />
