@@ -68,6 +68,20 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18131349273"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18131349273');
+          `}
+        </Script>
+
         {/* 네이버 애널리틱스 */}
         <script type="text/javascript" src="//wcs.pstatic.net/wcslog.js" async />
         <script
