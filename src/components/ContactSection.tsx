@@ -75,6 +75,9 @@ export default function ContactSection() {
       const result = await response.json();
 
       if (response.ok && result.success) {
+        if (typeof window !== 'undefined' && (window as any).gtag) {
+          (window as any).gtag('event', 'conversion', { 'send_to': 'AW-18131349273/cQG8COijsMIcEJne2cVD', 'value': 1.0, 'currency': 'KRW' });
+        }
         setFormData({ name: '', phone: '', startLoc: '', endLoc: '', item: '', quantity: '', message: '' });
         setIsSubmitted(true);
 
@@ -116,7 +119,13 @@ export default function ContactSection() {
                   <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-2 font-bold opacity-70">Company Representative</div>
                   <a
                     href="tel:18336362"
-                    onClick={(e) => { e.preventDefault(); window.location.href = 'tel:18336362'; }}
+                    onClick={(e) => { 
+                      e.preventDefault(); 
+                      if (typeof window !== 'undefined' && (window as any).gtag) {
+                        (window as any).gtag('event', 'conversion', { 'send_to': 'AW-18131349273/cQG8COijsMIcEJne2cVD', 'value': 1.0, 'currency': 'KRW' });
+                      }
+                      window.location.href = 'tel:18336362'; 
+                    }}
                     className="text-white text-4xl lg:text-5xl font-black tracking-tighter group-hover:text-primary-orange transition-colors flex items-center gap-3 cursor-pointer"
                   >
                     1833-6362
@@ -128,6 +137,11 @@ export default function ContactSection() {
                   <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-2 font-bold opacity-70">Email Inquiry</div>
                   <a
                     href="mailto:protexmove@gmail.com"
+                    onClick={() => {
+                      if (typeof window !== 'undefined' && (window as any).gtag) {
+                        (window as any).gtag('event', 'conversion', { 'send_to': 'AW-18131349273/cQG8COijsMIcEJne2cVD', 'value': 1.0, 'currency': 'KRW' });
+                      }
+                    }}
                     className="text-white text-xl lg:text-2xl font-black group-hover:text-primary-orange transition-colors flex items-center gap-3 cursor-pointer break-all"
                   >
                     protexmove@gmail.com
