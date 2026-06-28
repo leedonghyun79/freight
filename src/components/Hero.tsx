@@ -102,11 +102,11 @@ export default function Hero() {
                   (window as any).gtag('event', 'conversion', { 'send_to': 'AW-18131349273/cQG8COijsMIcEJne2cVD', 'value': 1.0, 'currency': 'KRW' });
                 }
               }}
-              className="flex-1 md:flex-none px-4 md:px-0 py-3 md:py-0 border-2 md:border-none border-white/50 text-white rounded-full md:rounded-none transition-all duration-300 backdrop-blur-md md:backdrop-blur-none uppercase tracking-widest whitespace-nowrap md:cursor-default md:pointer-events-none max-md:hover:bg-white max-md:hover:text-primary-navy flex items-center justify-center md:ml-8"
+              className="flex-1 md:flex-none px-2 md:px-10 py-3.5 md:py-5 border border-white/50 bg-transparent text-white rounded-full hover:bg-white/10 transition-all duration-300 uppercase tracking-widest whitespace-nowrap cursor-pointer flex items-center justify-center"
             >
-              <div className="flex flex-col items-center md:items-start leading-tight">
-                <span className="text-[9px] md:text-[12px] text-white/70 font-medium uppercase tracking-wider mb-0.5">고객센터</span>
-                <span className="text-[13px] md:text-[25px] font-bold">1833-6362</span>
+              <div className="flex flex-row items-center gap-1.5 md:gap-2 leading-none">
+                <span className="text-[11px] md:text-[15px] text-white/80 md:text-white font-medium">고객센터</span>
+                <span className="text-[13px] md:text-[15px] font-bold">1833-6362</span>
               </div>
             </a>
           </div>
