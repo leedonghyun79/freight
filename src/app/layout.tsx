@@ -97,6 +97,20 @@ export default function RootLayout({
             `,
           }}
         />
+
+        {/* 네이버 전환추적 (공통) */}
+        <Script type="text/javascript" src="//wcs.naver.net/wcslog.js" strategy="afterInteractive" />
+        <Script id="naver-conversion" strategy="afterInteractive">
+          {`
+            if (!wcs_add) var wcs_add={};
+            wcs_add["wa"] = "s_4b5a2383003";
+            if (!_nasa) var _nasa={};
+            if(window.wcs){
+              wcs.inflow();
+              wcs_do();
+            }
+          `}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

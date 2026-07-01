@@ -36,6 +36,11 @@ export default function FloatingAction() {
               onClick={() => {
                 if (typeof window !== 'undefined' && (window as any).gtag) {
                   (window as any).gtag('event', 'conversion', { 'send_to': 'AW-18131349273/cQG8COijsMIcEJne2cVD', 'value': 1.0, 'currency': 'KRW' });
+                  if (typeof window !== 'undefined' && (window as any).wcs) {
+                    if (!(window as any)._nasa) (window as any)._nasa = {};
+                    (window as any)._nasa["cnv"] = (window as any).wcs.cnv("4", "1");
+                    (window as any).wcs_do((window as any)._nasa);
+                  }
                 }
               }}
               whileHover={{ scale: 1.1 }}
@@ -54,6 +59,11 @@ export default function FloatingAction() {
               onClick={() => {
                 if (typeof window !== 'undefined' && (window as any).gtag) {
                   (window as any).gtag('event', 'conversion', { 'send_to': 'AW-18131349273/cQG8COijsMIcEJne2cVD', 'value': 1.0, 'currency': 'KRW' });
+                  if (typeof window !== 'undefined' && (window as any).wcs) {
+                    if (!(window as any)._nasa) (window as any)._nasa = {};
+                    (window as any)._nasa["cnv"] = (window as any).wcs.cnv("4", "1");
+                    (window as any).wcs_do((window as any)._nasa);
+                  }
                 }
               }}
               whileHover={{ scale: 1.1 }}

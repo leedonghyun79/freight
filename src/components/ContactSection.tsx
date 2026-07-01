@@ -77,6 +77,11 @@ export default function ContactSection() {
       if (response.ok && result.success) {
         if (typeof window !== 'undefined' && (window as any).gtag) {
           (window as any).gtag('event', 'conversion', { 'send_to': 'AW-18131349273/cQG8COijsMIcEJne2cVD', 'value': 1.0, 'currency': 'KRW' });
+          if (typeof window !== 'undefined' && (window as any).wcs) {
+            if (!(window as any)._nasa) (window as any)._nasa = {};
+            (window as any)._nasa["cnv"] = (window as any).wcs.cnv("4", "1");
+            (window as any).wcs_do((window as any)._nasa);
+          }
         }
         setFormData({ name: '', phone: '', startLoc: '', endLoc: '', item: '', quantity: '', message: '' });
         setIsSubmitted(true);
@@ -123,6 +128,11 @@ export default function ContactSection() {
                       e.preventDefault(); 
                       if (typeof window !== 'undefined' && (window as any).gtag) {
                         (window as any).gtag('event', 'conversion', { 'send_to': 'AW-18131349273/cQG8COijsMIcEJne2cVD', 'value': 1.0, 'currency': 'KRW' });
+                        if (typeof window !== 'undefined' && (window as any).wcs) {
+                          if (!(window as any)._nasa) (window as any)._nasa = {};
+                          (window as any)._nasa["cnv"] = (window as any).wcs.cnv("4", "1");
+                          (window as any).wcs_do((window as any)._nasa);
+                        }
                       }
                       window.location.href = 'tel:18336362'; 
                     }}
@@ -140,6 +150,11 @@ export default function ContactSection() {
                     onClick={() => {
                       if (typeof window !== 'undefined' && (window as any).gtag) {
                         (window as any).gtag('event', 'conversion', { 'send_to': 'AW-18131349273/cQG8COijsMIcEJne2cVD', 'value': 1.0, 'currency': 'KRW' });
+                        if (typeof window !== 'undefined' && (window as any).wcs) {
+                          if (!(window as any)._nasa) (window as any)._nasa = {};
+                          (window as any)._nasa["cnv"] = (window as any).wcs.cnv("4", "1");
+                          (window as any).wcs_do((window as any)._nasa);
+                        }
                       }
                     }}
                     className="text-white text-xl lg:text-2xl font-black group-hover:text-primary-orange transition-colors flex items-center gap-3 cursor-pointer break-all"

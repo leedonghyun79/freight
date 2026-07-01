@@ -89,6 +89,11 @@ export default function Hero() {
               onClick={() => {
                 if (typeof window !== 'undefined' && (window as any).gtag) {
                   (window as any).gtag('event', 'conversion', { 'send_to': 'AW-18131349273/cQG8COijsMIcEJne2cVD', 'value': 1.0, 'currency': 'KRW' });
+                  if (typeof window !== 'undefined' && (window as any).wcs) {
+                    if (!(window as any)._nasa) (window as any)._nasa = {};
+                    (window as any)._nasa["cnv"] = (window as any).wcs.cnv("4", "1");
+                    (window as any).wcs_do((window as any)._nasa);
+                  }
                 }
               }}
               className="flex-1 md:flex-none px-4 md:px-10 py-3.5 md:py-5 bg-primary-orange text-white font-bold rounded-full hover:bg-orange-600 transition-all duration-300 shadow-2xl shadow-primary-orange/40 uppercase tracking-widest text-[11px] md:text-[15px] flex items-center justify-center cursor-pointer whitespace-nowrap"
@@ -100,6 +105,11 @@ export default function Hero() {
               onClick={() => {
                 if (typeof window !== 'undefined' && (window as any).gtag) {
                   (window as any).gtag('event', 'conversion', { 'send_to': 'AW-18131349273/cQG8COijsMIcEJne2cVD', 'value': 1.0, 'currency': 'KRW' });
+                  if (typeof window !== 'undefined' && (window as any).wcs) {
+                    if (!(window as any)._nasa) (window as any)._nasa = {};
+                    (window as any)._nasa["cnv"] = (window as any).wcs.cnv("4", "1");
+                    (window as any).wcs_do((window as any)._nasa);
+                  }
                 }
               }}
               className="flex-1 md:flex-none px-2 md:px-10 py-3.5 md:py-5 border border-white/50 bg-transparent text-white rounded-full hover:bg-white/10 transition-all duration-300 uppercase tracking-widest whitespace-nowrap cursor-pointer flex items-center justify-center"
