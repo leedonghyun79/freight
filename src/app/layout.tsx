@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "무진동화물차/무진동항온항습/무진동리프트",
+    title: "무진동화물차·무진동항온항습·무진동리프트 | 프로텍스특수운송",
     description: "프로텍스특수운송은 반도체, 의료기기, 항공우주부품등 고가 정밀장비 운송을 위해 특수무진동 항온항습 리프트차량으로 최적의 운송서비스를 제공합니다",
     images: ["/images/메인트럭사진.jpg"],
   },
