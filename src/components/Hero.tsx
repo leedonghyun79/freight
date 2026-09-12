@@ -73,8 +73,8 @@ export default function Hero() {
           </span>
 
           <h1 className="text-[28px] md:text-[64px] font-outfit font-black text-white leading-[1.2] md:leading-[1.1] mb-6 md:mb-8 tracking-tighter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] break-keep">
-            프로텍스가 제안하는<br />
-            <span className="text-primary-orange text-[32px] md:text-[72px]">운송의 새로운 기준</span>
+            처음부터 도착까지,<br />
+            <span className="text-primary-orange text-[32px] md:text-[72px]">완벽한 책임 운송</span>
           </h1>
 
           <p className="text-[14px] md:text-[20px] text-gray-100 font-medium mb-10 md:mb-12 max-w-2xl leading-relaxed drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)] opacity-90 break-keep">
