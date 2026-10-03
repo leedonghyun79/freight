@@ -73,13 +73,13 @@ export default function TechnologySpecs() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
             
             {/* Overlay Content */}
-            <div className="absolute inset-0 p-10 flex flex-col justify-end">
-              <div className="space-y-6">
-                <div className="bg-primary-orange text-white px-4 py-1.5 rounded-lg text-[11px] font-bold tracking-widest uppercase inline-block font-inter">
+            <div className="absolute inset-0 p-8 lg:p-10 flex flex-col justify-end">
+              <div className="space-y-4">
+                <div className="bg-primary-orange text-white px-4 py-1.5 rounded-lg text-[11px] font-bold tracking-widest uppercase inline-block font-inter w-fit">
                   주력 차량
                 </div>
                 <div>
-                  <h3 className="text-2xl lg:text-[28px] font-black text-white leading-[1.3] tracking-tighter mb-4">
+                  <h3 className="text-2xl lg:text-[28px] font-black text-white leading-[1.3] tracking-tighter mb-3">
                     최신 독일제 MAN트럭 & <br />
                     1톤무진동 부터 25톤무진동 화물차
                   </h3>
@@ -87,19 +87,6 @@ export default function TechnologySpecs() {
                     4.2톤 대형 파워 리프트 장착 <br />
                     <span className="text-[14px] font-normal">(폭 2,400 / 길이 6,200 / 높이 2,500 이상)</span>
                   </p>
-                </div>
-              </div>
-              
-              {/* Bottom Status Info */}
-              <div className="mt-10 pt-6 border-t border-white/10">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-white/40 text-[10px] font-bold uppercase tracking-widest mb-1">Standard Spec</div>
-                    <div className="text-white text-xs font-bold font-inter">MAN TGX Vibration Free</div>
-                  </div>
-                  <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white">
-                    <Truck size={20} />
-                  </div>
                 </div>
               </div>
             </div>

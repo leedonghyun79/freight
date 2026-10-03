@@ -181,10 +181,6 @@ export default function ContactSection() {
                   </div>
                 </div>
               </div>
-              <div className="flex items-center space-x-4">
-                <div className="w-2 h-2 rounded-full bg-primary-orange animate-pulse"></div>
-                <span className="text-[10px] text-gray-500 font-bold uppercase tracking-widest leading-none">Available 24/7 National Wide Support</span>
-              </div>
             </div>
           </div>
 

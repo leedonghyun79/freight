@@ -86,20 +86,16 @@ export default function Footer() {
 
           <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h4 className="text-white text-xs font-black uppercase tracking-widest mb-8 flex items-center">
-                <span className="w-2 h-2 rounded-full bg-primary-orange mr-3"></span>
-                Contact Information
-              </h4>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="mt-1 text-primary-orange"><Phone size={18} /></div>
+                  <div className="mt-1 text-gray-500"><Phone size={18} /></div>
                   <div>
                     <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Representative Number</div>
                     <div className="text-lg font-black text-white">1833-6362</div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="mt-1 text-primary-orange"><Mail size={18} /></div>
+                  <div className="mt-1 text-gray-500"><Mail size={18} /></div>
                   <div>
                     <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Email Support</div>
                     <div className="text-sm font-bold text-gray-300">protexmove@gmail.com</div>
@@ -109,13 +105,9 @@ export default function Footer() {
             </div>
 
             <div>
-              <h4 className="text-white text-xs font-black uppercase tracking-widest mb-8 flex items-center">
-                <span className="w-2 h-2 rounded-full bg-primary-orange mr-3"></span>
-                Business Center
-              </h4>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="mt-1 text-primary-orange"><MapPin size={18} /></div>
+                  <div className="mt-1 text-gray-500"><MapPin size={18} /></div>
                   <div>
                     <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Office Location</div>
                     <div className="text-sm font-bold text-gray-300 leading-relaxed">
@@ -125,7 +117,7 @@ export default function Footer() {
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="mt-1 text-primary-orange"><Building2 size={18} /></div>
+                  <div className="mt-1 text-gray-500"><Building2 size={18} /></div>
                   <div>
                     <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Registration Details</div>
                     <div className="text-sm font-bold text-gray-300">
