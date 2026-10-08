@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import { createPortal } from "react-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -63,6 +64,27 @@ const cases = [
 
 export default function PortfolioCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const selected = selectedIndex === null ? null : cases[selectedIndex];
+  const isOpen = selectedIndex !== null;
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedIndex(null);
+      else if (e.key === "ArrowLeft")
+        setSelectedIndex((i) => (i === null ? i : (i - 1 + cases.length) % cases.length));
+      else if (e.key === "ArrowRight")
+        setSelectedIndex((i) => (i === null ? i : (i + 1) % cases.length));
+    };
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [isOpen]);
 
   return (
     <section id="portfolio" className="py-24 bg-white overflow-hidden scroll-mt-24">
@@ -115,7 +137,18 @@ export default function PortfolioCarousel() {
           >
             {cases.map((item) => (
               <SwiperSlide key={item.id} className="!w-[320px]">
-                <div className="bg-white rounded-lg overflow-hidden border border-gray-100 transition-all hover:shadow-xl group/card h-[408px] flex flex-col">
+                <div
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => setSelectedIndex(cases.indexOf(item))}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setSelectedIndex(cases.indexOf(item));
+                    }
+                  }}
+                  className="bg-white rounded-lg overflow-hidden border border-gray-100 transition-all hover:shadow-xl group/card h-[408px] flex flex-col cursor-pointer"
+                >
                   {/* Image Container */}
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <Image
@@ -141,6 +174,74 @@ export default function PortfolioCarousel() {
           </Swiper>
         </div>
       </div>
+
+      {/* Detail Modal */}
+      {selected && createPortal(
+        <div
+          className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/70 p-4"
+          onClick={() => setSelectedIndex(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={selected.title}
+        >
+          <div
+            className="relative w-full max-w-3xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="max-h-[90vh] overflow-y-auto bg-white rounded-lg shadow-2xl relative">
+            <button
+              type="button"
+              onClick={() => setSelectedIndex(null)}
+              aria-label="닫기"
+              className="absolute top-3 right-3 z-10 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/70 transition-colors cursor-pointer"
+            >
+              <X size={20} />
+            </button>
+            <div className="relative aspect-[4/3] w-full bg-gray-100">
+              <Image
+                src={selected.image}
+                alt={selected.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 768px"
+                className="object-cover"
+              />
+            </div>
+            <div className="p-6 md:p-8">
+              <span className="text-primary-orange font-bold text-xs tracking-widest uppercase">
+                {selected.category}
+              </span>
+              <h3 className="mt-2 text-2xl font-black text-gray-900">{selected.title}</h3>
+              <p className="mt-4 text-base text-gray-600 leading-relaxed">
+                {selected.description}
+              </p>
+            </div>
+            </div>
+
+            {/* Prev / Next: vertically centered on the whole modal (image + text) */}
+            <button
+              type="button"
+              onClick={() =>
+                setSelectedIndex((i) => (i === null ? i : (i - 1 + cases.length) % cases.length))
+              }
+              aria-label="이전 사례"
+              className="absolute left-2 md:-left-[72px] top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/90 text-gray-800 shadow-lg flex items-center justify-center hover:bg-white transition-colors cursor-pointer"
+            >
+              <ChevronLeft size={28} />
+            </button>
+            <button
+              type="button"
+              onClick={() =>
+                setSelectedIndex((i) => (i === null ? i : (i + 1) % cases.length))
+              }
+              aria-label="다음 사례"
+              className="absolute right-2 md:-right-[72px] top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/90 text-gray-800 shadow-lg flex items-center justify-center hover:bg-white transition-colors cursor-pointer"
+            >
+              <ChevronRight size={28} />
+            </button>
+          </div>
+        </div>,
+        document.body
+      )}
     </section>
   );
 }
