@@ -3,16 +3,12 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay, EffectFade, Controller } from "swiper/modules";
-import type { Swiper as SwiperType } from "swiper";
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { Navigation, Autoplay } from "swiper/modules";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/effect-fade";
 
 const cases = [
   {
@@ -30,14 +26,6 @@ const cases = [
     category: "Semiconductor",
     image: "/images/20260311_102924.jpg",
     specs: ["Constant Temp", "Vibration Free", "Security"],
-  },
-  {
-    id: 4,
-    title: "현대로템 정밀장비 운송",
-    description: "전국 주요 공공기관의 노후 서버 및 신규 서버센터 통합 이전 프로젝트. 보안 1등급 기술 인력 및 특수 에어 서스펜션 차량 대거 투입.",
-    category: "Data Center",
-    image: "/images/20260316_095955.jpg",
-    specs: ["Multiple Trucks", "Safety Check"],
   },
   {
     id: 5,
@@ -62,14 +50,6 @@ const cases = [
     category: "Safety Packing",
     image: "/images/KakaoTalk_20240925_171228899_09.jpg",
     specs: ["Anti-Static", "Padding"],
-  },
-  {
-    id: 8,
-    title: "원자력발전소내 실험장비 이전",
-    description: "운송 중 적재함 내부의 실시간 상태 확인. 항온항습 모니터링 및 CCTV를 통해 도착지까지 화물의 안전 상태를 실시간으로 모니터링.",
-    category: "Monitoring",
-    image: "/images/원자력발전소내실험장비.jpg",
-    specs: ["Real-time CCTV", "Climate Log"],
   },
   {
     id: 9,
