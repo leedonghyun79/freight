@@ -62,6 +62,39 @@ const cases = [
   },
 ];
 
+// Fills its (relative) parent; shows a pulsing skeleton until the image has loaded.
+function SkeletonImage({
+  src,
+  alt,
+  className,
+  sizes,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+  sizes?: string;
+}) {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <>
+      {!loaded && (
+        <div className="absolute inset-0 overflow-hidden bg-gray-200">
+          <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/70 to-transparent animate-[shimmer_1.4s_infinite]" />
+        </div>
+      )}
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes={sizes}
+        onLoad={() => setLoaded(true)}
+        className={`${className ?? ""} ${loaded ? "opacity-100" : "opacity-0"}`}
+      />
+    </>
+  );
+}
+
 export default function PortfolioCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -151,10 +184,9 @@ export default function PortfolioCarousel() {
                 >
                   {/* Image Container */}
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <Image
+                    <SkeletonImage
                       src={item.image}
                       alt={item.title}
-                      fill
                       className="object-cover transition-transform duration-500 group-hover/card:scale-110"
                     />
                   </div>
@@ -198,10 +230,10 @@ export default function PortfolioCarousel() {
               <X size={20} />
             </button>
             <div className="relative aspect-[4/3] w-full bg-gray-100">
-              <Image
+              <SkeletonImage
+                key={selected.id}
                 src={selected.image}
                 alt={selected.title}
-                fill
                 sizes="(max-width: 768px) 100vw, 768px"
                 className="object-cover"
               />
